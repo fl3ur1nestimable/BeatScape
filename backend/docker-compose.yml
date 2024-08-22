@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql:8.0.39
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: beatscape
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    volumes:
+      - ./mysql-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - db
+
+  adminer:
+    image: adminer
+    restart: always
+    container_name: adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - db
+
+  web:
+    build: .
+    restart: always
+    container_name: django_web
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    networks:
+      - db
+    volumes:
+      - ./beatscape:/app
+    command: >
+      sh -c "
+      sleep 10 &&
+      python manage.py migrate &&
+      gunicorn --bind 0.0.0.0:8000 beatscape.wsgi:application
+      "
+
+volumes:
+  mysql_data:
+
+networks:
+  db:
