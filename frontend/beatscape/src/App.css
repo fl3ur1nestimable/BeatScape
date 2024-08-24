@@ -90,6 +90,10 @@
     position : relative;
 }
 
+.bottom-bar{
+    justify-content: center;
+}
+
 
 .app-center-logo{
     z-index: 1;
