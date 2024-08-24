@@ -1,3 +1,21 @@
+@keyframes hide{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 .app{
     background-color: var(--default-bg-color);
     color: var(--default-text-color);
@@ -17,7 +35,7 @@
 
 .app-header h1{
     margin: 0;
-    padding: 0.2rem;
+    padding: 0.5rem;
     font-size: 16px;
     flex: 1;
     -webkit-app-region: drag;
@@ -37,7 +55,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     z-index: 2;
 }
 
@@ -51,7 +69,6 @@
 .center-panel{
     flex: 3;
     margin: 0 1rem;
-    opacity: 0.5;
 }
 
 .left-panel, .right-panel{
@@ -59,10 +76,20 @@
 }
 
 .top-bar, .bottom-bar{
-    border-bottom: 1px solid var(--default-border-color);
-    border-radius: 5px;
     z-index: 2;
+    padding: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.top-bar{
+    justify-content: unset;
+    position : relative;
+}
+
 
 .app-center-logo{
     z-index: 1;
@@ -72,3 +99,95 @@
     transform: translate(-50%, -50%);
 }
 
+.dots{
+    all : unset;
+    cursor: pointer;
+    font-size: 2rem;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar-left{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.hide{
+    animation: hide 0.5s forwards;
+}
+
+.show{
+    animation: show 0.5s forwards;
+}
+
+.toogle-center-panel{
+    all : unset;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toogle-center-panel:hover{
+    transform: scale(1.1);
+}
+
+.toogle-center-panel:active{
+    transform: scale(0.9);
+}
+
+.toogle-center-panel img{
+    width: 40px;
+    height: 40px;
+}
+
+.top-bar-right{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    position: absolute;
+    right: 0;
+}
+
+.profile-button{
+    all : unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    transition: 0.3s;
+}
+
+.profile-button img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border : 3px solid var(--default-border-color);
+}
+
+.profile-button:hover{
+    transform: scale(1.1);
+}
+
+.profile-button:active{
+    transform: scale(0.9);
+}
+
+.settings-button{
+    all : unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    font-size: 2rem;
+    padding: 0.5rem;
+    transition: 0.3s;
+}
+
+.settings-button:hover{
+    transform: scale(1.1);
+}
+
+.settings-button:active{
+    transform: scale(0.8);
+}

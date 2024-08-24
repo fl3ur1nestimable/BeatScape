@@ -15,6 +15,7 @@ code {
 :root{
   --default-text-color: white;
   --default-border-color: white;
+  --default-secondary-border-color: #38B6FF;
 
   --default-bg-color: #222222;
   --default-secondary-bg-color: #2C3333;

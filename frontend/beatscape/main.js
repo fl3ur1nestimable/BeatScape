@@ -95,6 +95,14 @@ function createWindow() {
         mainWindow.close();
     });
 
+    ipcMain.on('fullscreen', () => {
+        if (mainWindow.isFullScreen()) {
+            mainWindow.setFullScreen(false);
+        } else {
+            mainWindow.setFullScreen(true);
+        }
+    });
+
     ipcMain.on('set-title', (event, title) => {
         mainWindow.setTitle(title);
     });
