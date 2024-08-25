@@ -1,0 +1,67 @@
+.volume-controller {
+  display: flex;
+  align-items: center;
+    column-gap: 0.5rem;
+    flex : 1;
+}
+
+.volume-controller button {
+  all: unset;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--default-text-color);
+  transition :0.3s;
+}
+
+.volume-controller button:hover {
+  color: var(--default-title-color);
+  transform: scale(1.1);
+}
+
+.volume-controller button:active {
+  transform: scale(0.9);
+}
+
+.volume-controller input[type="range"]{
+    width: 100px;
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    background: var(--default-secondary-bg-color);
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.volume-controller input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--default-text-color);
+    cursor: pointer;
+    position: relative;
+    top : -5px;
+    visibility: hidden;
+}
+
+.volume-controller input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, var(--default-text-color) 0%, var(--default-text-color) var(--valueVolume), gray var(--valueVolume), gray 100%);
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+}
+
+.volume-controller input[type="range"]:hover::-webkit-slider-thumb{
+    visibility: visible;
+}
+
+.volume-controller input[type="range"]:hover::-webkit-slider-runnable-track{
+    background: linear-gradient(to right, var(--default-title-color) 0%, var(--default-title-color) var(--valueVolume), gray var(--valueVolume), gray 100%);
+}

@@ -1,11 +1,13 @@
 import './App.css';
 import React from 'react';
 import { useState } from 'react';
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDots, BsPip } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
+import { MdOpenInFull, MdOutlineCloseFullscreen } from "react-icons/md";
 import TitleBar from './components/TitleBar.js';
 import SearchBar from './components/SearchBar.js';
 import MusicController from './components/MusicController.js';
+import VolumeController from './components/VolumeController.js';
 
 
 function App() {
@@ -17,6 +19,13 @@ function App() {
 
   const [currentTime, setCurrentTime] = useState(100);
   const [duration, setDuration] = useState(180);
+
+  const [volume, setVolume] = useState(50);
+
+  const toggleFullScreen = () => {
+    window.electronAPI.toogleFullScreen();
+    setIsFullScreen(!isFullScreen);
+  }
 
 
   const showAltMenu = () => {
@@ -51,9 +60,19 @@ function App() {
     console.log('seek', percent);
   }
 
+  const onSearch = (value) => {
+    console.log('search', value);
+    setSearchInput(value);
+    setCenterPanel(true);
+  }
+
   return (
     <div>
-      {isFullScreen ? <div>fullscreen</div> : 
+      {isFullScreen ? <div>
+        <button className='close-fullscreen' onClick={() => toggleFullScreen()}>
+          <MdOutlineCloseFullscreen />
+        </button>
+      </div> : 
       <div className='app'>
           <header className='app-header'>
             <h1>Beatscape</h1>
@@ -67,7 +86,7 @@ function App() {
                   <img src="logo192nobg.png" alt="logo" loading='lazy' />
                 </button>
               </div>
-              <SearchBar onSearch={(value) => setSearchInput(value)} />
+              <SearchBar onSearch={(value) => onSearch(value)} />
               <div className='top-bar-right'>
                 {//TOCOMPLETE
                 }
@@ -89,6 +108,10 @@ function App() {
               </section>
             </div>
             <section className='bottom-bar'>
+              <VolumeController
+                onVolumeChange={(volume) => console.log('volume', volume)}
+                volume={volume}
+              />
               <MusicController
                 onPlay={onPlay}
                 onPause={onPause}
@@ -99,7 +122,13 @@ function App() {
                 onSeek={onSeek}
                 currentTime={currentTime}
                 duration={duration}
+                
+                className='music-controller'
               />
+              <div className='bottom-bar-right'>
+                <button className='pip'><BsPip /></button>
+                <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOpenInFull /></button>
+              </div>
             </section>
             <img src="logo192.png" className="app-center-logo" alt="logo" loading='lazy' />
           </div>

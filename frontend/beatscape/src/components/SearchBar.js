@@ -1,10 +1,15 @@
 import React from "react";
-import { IoSearch } from "react-icons/io5";
+import { IoSearch, IoClose } from "react-icons/io5";
 import "./SearchBar.css";
 
 function SearchBar({onSearch}) {
     const handleSearch = (event) => {
         onSearch(event.target.value);
+    }
+
+    const clearInput = () => {
+        document.querySelector('.search-bar input').value = '';
+        onSearch('');
     }
 
     const focusInput = () => {
@@ -15,7 +20,10 @@ function SearchBar({onSearch}) {
         <div className='search-bar'>
             <div className="search-bar-container" onClick={focusInput}>
                 <IoSearch className="search-icon"/>
-                <input type='text' placeholder='Search anything...' onChange={handleSearch} />
+                <input className="search-input" type='text' placeholder='Search anything...' onChange={handleSearch} />
+                <button className="clear-input" onClick={clearInput}>
+                    <IoClose />
+                </button>
             </div>
         </div>
     );

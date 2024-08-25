@@ -43,3 +43,20 @@
 .search-bar-container:hover{
     background-color: var(--default-secondary-bg-color);
 }
+
+
+.clear-input {
+    all: unset;
+    cursor: pointer;
+    color: var(--default-text-color);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    visibility: hidden;
+}
+
+.search-input:not(:placeholder-shown) ~ .clear-input {
+    visibility: visible;
+}

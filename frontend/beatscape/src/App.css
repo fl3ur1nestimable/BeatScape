@@ -81,18 +81,13 @@
     padding-left: 0;
     padding-right: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .top-bar{
-    justify-content: unset;
-    position : relative;
+    position: relative;
 }
 
-.bottom-bar{
-    justify-content: center;
-}
 
 
 .app-center-logo{
@@ -194,4 +189,31 @@
 
 .settings-button:active{
     transform: scale(0.8);
+}
+
+.bottom-bar-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 0.5rem;
+    flex : 1;
+}
+
+.pip, .fullscreen{
+    all : unset;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.pip:hover, .fullscreen:hover{
+    transform: scale(1.1);
+    color: var(--default-title-color);
+}
+
+.pip:active, .fullscreen:active{
+    transform: scale(0.9);
 }
