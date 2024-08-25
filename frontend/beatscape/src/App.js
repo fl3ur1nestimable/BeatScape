@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsThreeDots, BsPip } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOpenInFull, MdOutlineCloseFullscreen } from "react-icons/md";
@@ -8,11 +8,17 @@ import TitleBar from './components/TitleBar.js';
 import SearchBar from './components/SearchBar.js';
 import MusicController from './components/MusicController.js';
 import VolumeController from './components/VolumeController.js';
+import DropdownMenu from './components/DropdownMenu.js';
+import menuDataJson from './dropdownData.json';
 
 
 function App() {
 
+  const menuData = menuDataJson.menuData;
+  const shortcuts = menuDataJson.shortcuts;
+
   const [centerPanel, setCenterPanel] = useState(true);
+  const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
   const [searchInput, setSearchInput] = useState('');
@@ -22,11 +28,15 @@ function App() {
 
   const [volume, setVolume] = useState(50);
 
+  const handleAction = (action) => {
+    console.log(action);
+    setIsDropdownMenuOpen(false);
+  }
+
   const toggleFullScreen = () => {
     window.electronAPI.toogleFullScreen();
     setIsFullScreen(!isFullScreen);
   }
-
 
   const showAltMenu = () => {
     console.log('showAltMenu');
@@ -81,7 +91,11 @@ function App() {
           <div className='app-main-container'>
             <section className='top-bar'>
               <div className='top-bar-left'>
-                <button className='dots' onClick={() => showAltMenu()}><BsThreeDots /></button>
+                <div className='dropdown-container'>
+                  <button className='dots' onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}><BsThreeDots /></button>
+                  {isDropdownMenuOpen && <DropdownMenu menuData={menuData} onAction={handleAction} />}
+                </div>
+                
                 <button className='toogle-center-panel' onClick={()=> setCenterPanel(!centerPanel)}>
                   <img src="logo192nobg.png" alt="logo" loading='lazy' />
                 </button>

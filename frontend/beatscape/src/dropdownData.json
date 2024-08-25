@@ -1,0 +1,94 @@
+{
+    "menuData": [
+      {
+        "label": "File",
+        "items": [
+          {
+            "label": "Log Out",
+            "shortcut": "Ctrl+W"
+          },
+          {
+            "label": "Exit",
+            "shortcut": "Ctrl+Q"
+          }
+        ]
+      },
+      {
+        "label": "Edit",
+        "items": [
+          {
+            "label": "Search",
+            "shortcut": "Ctrl+F"
+          },
+          {
+            "label": "Settings",
+            "shortcut": "Ctrl+P"
+          }
+        ]
+      },
+      {
+        "label": "Playback",
+        "items": [
+          {
+            "label": "Play",
+            "shortcut": "Space"
+          },
+          {
+            "label": "Pause",
+            "shortcut": "Space"
+          },
+          {
+            "label": "Next",
+            "shortcut": "Ctrl+Right Arrow"
+          },
+          {
+            "label": "Previous",
+            "shortcut": "Ctrl+Left Arrow"
+          },
+          {
+            "label": "Repeat",
+            "shortcut": "Ctrl+R"
+          },
+          {
+            "label": "Shuffle",
+            "shortcut": "Ctrl+S"
+          },
+          {
+            "label": "Volume Up",
+            "shortcut": "Ctrl+Up Arrow"
+          },
+          {
+            "label": "Volume Down",
+            "shortcut": "Ctrl+Down Arrow"
+          }
+        ]
+      },
+      {
+        "label": "Help",
+        "items": [
+          {
+            "label": "Documentation",
+            "shortcut": "F1"
+          },
+          {
+            "label": "About"
+          }
+        ]
+      }
+    ],
+    "shortcutActions": {
+      "Ctrl+W": "LogOut",
+      "Ctrl+Q": "Exit",
+      "Ctrl+F": "Search",
+      "Ctrl+P": "Settings",
+      "Space": ["Play", "Pause"],
+      "Ctrl+Right Arrow": "next",
+      "Ctrl+Left Arrow": "Previous",
+      "Ctrl+R": "Pepeat",
+      "Ctrl+S": "Shuffle",
+      "Ctrl+Up Arrow": "Volume Up",
+      "Ctrl+Down Arrow": "Volume Down",
+      "F1": "Documentation"
+    }
+  }
+  
