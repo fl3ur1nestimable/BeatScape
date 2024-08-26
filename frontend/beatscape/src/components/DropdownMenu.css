@@ -1,0 +1,62 @@
+.dropdown-container {
+    position: relative; /* This makes the dropdown menu relative to the button */
+    z-index: 1000; /* High z-index to ensure it appears above other content */
+}
+
+.dropdown-menu {
+    position: absolute; /* Position the dropdown relative to its container */
+    top: 120%; /* Align it right below the button */
+    left: 0;
+    border: 1px solid var(--default-border-color);
+    border-radius: 5px;
+    background-color: var(--default-secondary-bg-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+    min-width: 100px; /* Adjust the width as needed */
+}
+
+.dropdown-menu-item {
+    position: relative; /* Ensure the submenu is positioned relative to the parent item */
+    flex: 1;
+}
+
+.dropdown-menu-item button {
+    background-color: var(--default-secondary-bg-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--default-text-color);
+    padding: 0.5rem;
+    text-align: left;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    column-gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.dropdown-menu-item button:hover {
+    background-color: rgb(61, 61, 61);
+}
+
+.dropdown-menu-submenu {
+    display: none; /* Hide submenu by default */
+    position: absolute; /* Position nested submenu absolutely */
+    top: 0; /* Align the submenu with the top of the parent menu item */
+    left: 100%; /* Align the submenu to the right of the parent item */
+    margin-left: 0; /* Remove any left margin since we are using absolute positioning */
+    background-color: var(--default-secondary-bg-color);
+    border: 1px solid var(--default-border-color);
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a shadow for better visibility */
+     /* Adjust the width as needed */
+    z-index: 1001; /* Ensure the submenu appears above other content */
+}
+
+.dropdown-menu-item:hover .dropdown-menu-submenu {
+    display: flex;
+    flex-direction: column;
+}

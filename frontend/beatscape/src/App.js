@@ -1,6 +1,5 @@
 import './App.css';
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BsThreeDots, BsPip } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOpenInFull, MdOutlineCloseFullscreen } from "react-icons/md";
@@ -9,10 +8,12 @@ import SearchBar from './components/SearchBar.js';
 import MusicController from './components/MusicController.js';
 import VolumeController from './components/VolumeController.js';
 import DropdownMenu from './components/DropdownMenu.js';
-import menuDataJson from './dropdownData.json';
+import menuDataJson from './Data/dropdownData.json';
 
 
 function App() {
+
+  const dropdownRef = useRef(null);
 
   const menuData = menuDataJson.menuData;
   const shortcuts = menuDataJson.shortcuts;
@@ -32,6 +33,19 @@ function App() {
     console.log(action);
     setIsDropdownMenuOpen(false);
   }
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   const toggleFullScreen = () => {
     window.electronAPI.toogleFullScreen();
@@ -91,7 +105,7 @@ function App() {
           <div className='app-main-container'>
             <section className='top-bar'>
               <div className='top-bar-left'>
-                <div className='dropdown-container'>
+                <div className='dropdown-container' ref={dropdownRef}>
                   <button className='dots' onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}><BsThreeDots /></button>
                   {isDropdownMenuOpen && <DropdownMenu menuData={menuData} onAction={handleAction} />}
                 </div>

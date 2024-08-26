@@ -76,16 +76,12 @@
 }
 
 .top-bar, .bottom-bar{
-    z-index: 2;
+    z-index: 10;
     padding: 0.5rem;
     padding-left: 0;
     padding-right: 0;
     display: flex;
     align-items: center;
-}
-
-.top-bar{
-    position: relative;
 }
 
 
@@ -108,9 +104,11 @@
 }
 
 .top-bar-left{
+    z-index: 10;
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
+    flex : 1;
 }
 
 .hide{
@@ -143,9 +141,9 @@
 .top-bar-right{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     column-gap: 0.5rem;
-    position: absolute;
-    right: 0;
+    flex : 1;
 }
 
 .profile-button{
@@ -216,4 +214,12 @@
 
 .pip:active, .fullscreen:active{
     transform: scale(0.9);
+}
+
+.dropdown-container{
+    z-index: 10;
+}
+
+.dropdown-menu{
+    z-index: 10;
 }
