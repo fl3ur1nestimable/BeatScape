@@ -2,7 +2,8 @@
 
 .title-bar {
     display: flex;
-    justify-content: right;   
+    justify-content: right;
+    z-index: 2000;   
 }
 
 .title-bar-content {

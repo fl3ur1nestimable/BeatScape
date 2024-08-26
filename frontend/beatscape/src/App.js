@@ -8,7 +8,10 @@ import SearchBar from './components/SearchBar.js';
 import MusicController from './components/MusicController.js';
 import VolumeController from './components/VolumeController.js';
 import DropdownMenu from './components/DropdownMenu.js';
+import Profile from './components/Profile.js';
 import menuDataJson from './Data/dropdownData.json';
+import sampleDate from './Data/sampleData.json';
+
 
 
 function App() {
@@ -17,8 +20,9 @@ function App() {
 
   const menuData = menuDataJson.menuData;
   const shortcuts = menuDataJson.shortcuts;
+  const user = sampleDate.user;
 
-  const [centerPanel, setCenterPanel] = useState(true);
+  const [centerPanel, setCenterPanel] = useState(false);
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
 
@@ -26,6 +30,8 @@ function App() {
 
   const [currentTime, setCurrentTime] = useState(100);
   const [duration, setDuration] = useState(180);
+
+  const [centerPanelContent, setCenterPanelContent] = useState(0);
 
   const [volume, setVolume] = useState(50);
 
@@ -47,13 +53,30 @@ function App() {
     };
   }, [dropdownRef]);
 
+  const toggleCenterPanel = () => {
+    if (centerPanel) {
+      setCenterPanel(false);
+    }
+    else {
+      if(centerPanelContent!==0){
+        setCenterPanel(true);
+      }
+    }
+  }
+
   const toggleFullScreen = () => {
     window.electronAPI.toogleFullScreen();
     setIsFullScreen(!isFullScreen);
   }
 
-  const showAltMenu = () => {
-    console.log('showAltMenu');
+  const showProfile = () => {
+    setCenterPanelContent(1);
+    setCenterPanel(true);
+  }
+
+  const showSettings = () => {
+    setCenterPanelContent(2);
+    setCenterPanel(true);
   }
 
   const onPlay = () => {
@@ -87,6 +110,7 @@ function App() {
   const onSearch = (value) => {
     console.log('search', value);
     setSearchInput(value);
+    setCenterPanelContent(3);
     setCenterPanel(true);
   }
 
@@ -110,7 +134,7 @@ function App() {
                   {isDropdownMenuOpen && <DropdownMenu menuData={menuData} onAction={handleAction} />}
                 </div>
                 
-                <button className='toogle-center-panel' onClick={()=> setCenterPanel(!centerPanel)}>
+                <button className='toogle-center-panel' onClick={()=> toggleCenterPanel()}>
                   <img src="logo192nobg.png" alt="logo" loading='lazy' />
                 </button>
               </div>
@@ -118,10 +142,10 @@ function App() {
               <div className='top-bar-right'>
                 {//TOCOMPLETE
                 }
-                <button className='profile-button'>
+                <button className='profile-button' onClick={() => showProfile()}>
                   <img src="logo fraise.png" alt="logo" loading='lazy' />
                 </button>
-                <button className='settings-button'><IoSettingsOutline /></button>
+                <button className='settings-button' onClick={() => showSettings()}><IoSettingsOutline /></button>
               </div>
             </section>
             <div className='app-panels'>
@@ -129,7 +153,9 @@ function App() {
                   left panel
               </section>
               <section className={centerPanel ? 'center-panel show' : 'center-panel hide'}>
-                  center panel
+                {centerPanelContent === 1 && <Profile user={user} onSave={console.log("Profile Save")}/>}
+                {centerPanelContent === 2 && <div>settings</div>}
+                {centerPanelContent === 3 && <div>search</div>}
               </section>
               <section className='right-panel'>
                   right panel

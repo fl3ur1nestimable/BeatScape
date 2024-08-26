@@ -1,0 +1,82 @@
+.profile-content{
+    display: flex;
+    justify-content: center;
+    column-gap: 0.5rem;
+}
+
+.profile-side{
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-side span{
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--default-text-color);
+}
+
+.profile-side img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.pwd-inputs{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.pwd-inputs input[type="password"]{
+    all : unset;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--default-border-color);
+}
+
+.pwd-inputs input[type="password"]:focus{
+    border: 1px solid var(--default-title-color);
+}
+
+.profile-info input[type="text"]{
+    all : unset;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.profile-info input[type="text"]:focus{
+    border: 1px solid var(--default-title-color);
+}
+
+.profile-info input[type="text"]:hover{
+    border: 1px solid var(--default-text-color);
+}
+
+.profile-content button{
+    all : unset;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border : 2px solid var(--default-border-color);
+    background-color: rgb(60, 60, 60);
+    color: var(--default-text-color);
+    transition: 0.3s;
+}
+
+.profile-content button:hover{
+    background-color: rgb(17, 17, 17);
+}
+
+.profile-content button:active{
+    background-color: rgb(34, 34, 34);
+}
+
+
+
