@@ -95,7 +95,6 @@
     z-index: 1000;
     height: 100vh;
     position : relative;
-    overflow: hidden;
     transition: 2s;
 }
 
@@ -106,8 +105,6 @@
     position : relative;
     top : 50%;
     transform: translateY(-50%);
-    
-
 }
 
 .right{
@@ -132,6 +129,8 @@
     color: rgb(236, 51, 51);
     padding: 0;
     margin: 0;
+    white-space: wrap;
+    max-width: 250px;
 }
 
 @keyframes animLogo{
@@ -164,3 +163,33 @@
     }
 }
 
+.login-image svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-text {
+    fill: var(--default-text-color);
+    font-size: 110px; /* Adjust the size if needed */
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+@keyframes show2{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.onright{
+    animation : show 3s forwards;
+}
+
+.onleft{
+    animation : show2 3s forwards;
+}

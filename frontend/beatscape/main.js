@@ -27,9 +27,7 @@ function createWindow() {
         // Use this in production mode.
         // icon: path.join(__dirname, 'build/logo512.png'),
         show: false,
-        //disable the menu bar
         autoHideMenuBar: true,
-        //blend the top bar with the window
         frame: false,
         
     });
@@ -37,7 +35,7 @@ function createWindow() {
     // This block of code is intended for development purpose only.
     // Delete this entire block of code when you are ready to package the application.
     if (isDev()) {
-        mainWindow.loadURL('http://localhost:3000/login');
+        mainWindow.loadURL('http://localhost:3000/');
     } else {
         loadURL(mainWindow);
     }
