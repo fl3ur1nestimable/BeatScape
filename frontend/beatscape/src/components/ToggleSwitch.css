@@ -1,0 +1,39 @@
+.toggle-switch-container-on,
+.toggle-switch-container-off{
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0.2rem;
+}
+
+.toggle-switch-container-on{
+    background-color: var(--default-title-color);
+}
+
+.toggle-switch-container-off{
+    background-color: #ccc;
+}
+
+.switch-on,
+.switch-off{
+    /*this is the circle*/
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--default-text-color);
+    transition: 0.3s;
+}
+
+.switch-on{
+    transform: translateX(1.5rem);
+}
+
+.switch-off{
+    transform: translateX(0);
+}
+
+

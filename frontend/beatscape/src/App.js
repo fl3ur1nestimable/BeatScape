@@ -9,8 +9,12 @@ import MusicController from './components/MusicController.js';
 import VolumeController from './components/VolumeController.js';
 import DropdownMenu from './components/DropdownMenu.js';
 import Profile from './components/Profile.js';
+import Settings from './components/Settings.js';
+import SearchResult from './components/SearchResult.js';
 import menuDataJson from './Data/dropdownData.json';
 import sampleDate from './Data/sampleData.json';
+import sampleResult from './Data/sampleResult.json';
+import Themes from './Data/Themes.json';
 
 
 
@@ -21,6 +25,8 @@ function App() {
   const menuData = menuDataJson.menuData;
   const shortcuts = menuDataJson.shortcuts;
   const user = sampleDate.user;
+  const themes = Themes.themes;
+  const searchResult = sampleResult.searchResult;
 
   const [centerPanel, setCenterPanel] = useState(false);
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
@@ -34,6 +40,27 @@ function App() {
   const [centerPanelContent, setCenterPanelContent] = useState(0);
 
   const [volume, setVolume] = useState(50);
+
+  const [isRepeat, setIsRepeat] = useState(false);
+  const [isShuffle, setIsShuffle] = useState(false);
+  
+  const [isAutoplay, setIsAutoplay] = useState(false);
+
+
+  const onAutoplaySwitch = () => {
+    setIsAutoplay(!isAutoplay);
+  }
+
+  const onThemeSwitch =(theme) => {
+      themes.map((t) => {
+          if(t.name === theme){
+            const root = document.querySelector(':root');
+            t.vars.map((v) => {
+                root.style.setProperty(v.name, v.value);
+            });
+          }
+      });
+  }
 
   const handleAction = (action) => {
     console.log(action);
@@ -114,6 +141,12 @@ function App() {
     setCenterPanel(true);
   }
 
+  const onLogout = () => {
+    console.log('logout');
+  }
+
+
+
   return (
     <div>
       {isFullScreen ? <div>
@@ -154,8 +187,8 @@ function App() {
               </section>
               <section className={centerPanel ? 'center-panel show' : 'center-panel hide'}>
                 {centerPanelContent === 1 && <Profile user={user} onSave={console.log("Profile Save")}/>}
-                {centerPanelContent === 2 && <div>settings</div>}
-                {centerPanelContent === 3 && <div>search</div>}
+                {centerPanelContent === 2 && <div><Settings onThemeSwitch={onThemeSwitch} onAutoplaySwitch={onAutoplaySwitch} isAutoplay={isAutoplay} onLogout={onLogout}/></div>}
+                {centerPanelContent === 3 && <div><SearchResult result={searchResult} onPlay={onPlay} /></div>}
               </section>
               <section className='right-panel'>
                   right panel

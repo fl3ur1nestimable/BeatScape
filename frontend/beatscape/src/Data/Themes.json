@@ -1,0 +1,124 @@
+{
+    "themes": [
+        {
+            "name": "Classic",
+            "color": "#38B6FF",
+            "vars": [
+                {
+                    "name": "--default-text-color",
+                    "value": "white"
+                },
+                {
+                    "name": "--default-title-color",
+                    "value": "#38B6FF"
+                },
+                {
+                    "name": "--default-border-color",
+                    "value": "white"
+                },
+                {
+                    "name": "--default-secondary-border-color",
+                    "value": "#38B6FF"
+                },
+                {
+                    "name": "--default-bg-color",
+                    "value": "#222222"
+                },
+                {
+                    "name": "--default-secondary-bg-color",
+                    "value": "#2C3333"
+                }
+            ]
+        },
+        {
+            "name": "Light",
+            "color": "#FFFFFF",
+            "vars": [
+                {
+                    "name": "--default-text-color",
+                    "value": "#000000"
+                },
+                {
+                    "name": "--default-title-color",
+                    "value": "#333333"
+                },
+                {
+                    "name": "--default-border-color",
+                    "value": "#CCCCCC"
+                },
+                {
+                    "name": "--default-secondary-border-color",
+                    "value": "#999999"
+                },
+                {
+                    "name": "--default-bg-color",
+                    "value": "#FFFFFF"
+                },
+                {
+                    "name": "--default-secondary-bg-color",
+                    "value": "#F0F0F0"
+                }
+            ]
+        },
+        {
+            "name": "Strawberry",
+            "color": "#FF4D4D",
+            "vars": [
+                {
+                    "name": "--default-text-color",
+                    "value": "white"
+                },
+                {
+                    "name": "--default-title-color",
+                    "value": "#FF6384"
+                },
+                {
+                    "name": "--default-border-color",
+                    "value": "#FF4D4D"
+                },
+                {
+                    "name": "--default-secondary-border-color",
+                    "value": "#FF7F7F"
+                },
+                {
+                    "name": "--default-bg-color",
+                    "value": "#3C1F1F"
+                },
+                {
+                    "name": "--default-secondary-bg-color",
+                    "value": "#4D2626"
+                }
+            ]
+        },
+        {
+            "name": "Vinyl",
+            "color": "#292a2d",
+            "vars": [
+                {
+                    "name": "--default-text-color",
+                    "value": "#d8bdaa"
+                },
+                {
+                    "name": "--default-title-color",
+                    "value": "#c24238"
+                },
+                {
+                    "name": "--default-border-color",
+                    "value": "#bbbbbc"
+                },
+                {
+                    "name": "--default-secondary-border-color",
+                    "value": "#333333"
+                },
+                {
+                    "name": "--default-bg-color",
+                    "value": "#292a2d"
+                },
+                {
+                    "name": "--default-secondary-bg-color",
+                    "value": "#393333"
+                }
+            ]
+        }
+    ]
+}

@@ -14,19 +14,9 @@ code {
 
 :root{
   --default-text-color: white;
+  --default-title-color: #38B6FF;
   --default-border-color: white;
   --default-secondary-border-color: #38B6FF;
-
   --default-bg-color: #222222;
   --default-secondary-bg-color: #2C3333;
-  --default-title-color: #38B6FF;
-
-  --strawberry-bg-color: #FF5F56;
-  --strawberry-secondary-bg-color: #FF5F56;
-  --strawberry-title-color: #FF5F56;
-
-  --light-bg-color: #F2F2F2;
-  --light-secondary-bg-color: #E5E5E5;
-  --light-title-color: #682424;
-  --light-border-color: #251010;
 }
