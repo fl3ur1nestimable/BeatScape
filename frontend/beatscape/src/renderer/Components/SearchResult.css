@@ -1,0 +1,5 @@
+.search-result{
+    height: 100%; /* Let it fill available height */
+    max-height: 100%; /* Do not exceed the center panel's height */
+    overflow-y: scroll;
+}

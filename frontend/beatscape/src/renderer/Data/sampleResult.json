@@ -1,0 +1,126 @@
+{
+    "searchResult": {
+        "tracks": [
+            {
+                "id": 1,
+                "title": "Love Story",
+                "artists": ["Taylor Swift"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 2,
+                "title": "Crazy in Love",
+                "artists": ["Beyoncé", "Jay-Z"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 3,
+                "title": "I Will Always Love You",
+                "artists": ["Whitney Houston"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 4,
+                "title": "Endless Love",
+                "artists": ["Diana Ross", "Lionel Richie"],
+                "img": "logo fraise.png"
+            }
+        ],
+        "albums": [
+            {
+                "id": 1,
+                "title": "Love Deluxe",
+                "artists": ["Sade"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 2,
+                "title": "Love & War",
+                "artists": ["Tamar Braxton"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 3,
+                "title": "Love Yourself: Tear",
+                "artists": ["BTS"],
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 4,
+                "title": "Love Songs",
+                "artists": ["Elton John"],
+                "img": "logo fraise.png"
+            }
+        ],
+        "artists": [
+            {
+                "id": 1,
+                "name": "Love",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 2,
+                "name": "Love Spit Love",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 3,
+                "name": "Florence + The Machine",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 4,
+                "name": "Céline Dion",
+                "img": "logo fraise.png"
+            }
+        ],
+        "playlists": [
+            {
+                "id": 1,
+                "name": "Love Songs",
+                "user": "user123",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 2,
+                "name": "Romantic Hits",
+                "user": "user456",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 3,
+                "name": "Valentine's Day Vibes",
+                "user": "user789",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 4,
+                "name": "Love & Chill",
+                "user": "user101",
+                "img": "logo fraise.png"
+            }
+        ],
+        "genres": [
+            {
+                "id": 1,
+                "title": "Pop",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 2,
+                "title": "R&B",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 3,
+                "title": "Soul",
+                "img": "logo fraise.png"
+            },
+            {
+                "id": 4,
+                "title": "Rock",
+                "img": "logo fraise.png"
+            }
+        ]
+    }
+}
