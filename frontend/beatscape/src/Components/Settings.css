@@ -1,0 +1,51 @@
+.settings-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.theme-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.theme-option{
+    cursor: pointer;
+}
+
+.theme-preview{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.theme-option:hover .theme-preview{
+    border: 2px solid var(--default-border-color);
+}
+
+.autoplay{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout button{
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border : 2px solid var(--default-border-color);
+    background-color: #ff5f56;
+    color: var(--default-text-color);
+}
+
+.theme{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

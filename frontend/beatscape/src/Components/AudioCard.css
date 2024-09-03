@@ -1,0 +1,95 @@
+.track-card{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 0.5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.track-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: flex-start;
+    text-overflow: ellipsis;
+}
+
+.track-card-info h3{
+    white-space: nowrap;
+    font-size: 1.5rem;
+    color: var(--default-text-color);
+    padding: 0;
+    margin: 0;
+}
+
+.track-card-artists{
+    display: flex;
+    column-gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--default-text-color);
+    padding: 0;
+    margin: 0;
+}
+
+.track-card-artist{
+    padding: 0;
+    margin: 0;
+}
+
+.track-card:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.album-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 0.5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.album-card:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.artist-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 0.5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.artist-card:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.playlist-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 0.5rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 10rem;
+    cursor: pointer;
+}
+
+.playlist-card:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.track-card p:hover, .album-card p:hover, .artist-card p:hover, .playlist-card p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+

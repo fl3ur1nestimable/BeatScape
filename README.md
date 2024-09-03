@@ -1,2 +1,2 @@
 # BeatScape
- Music player project | Desktop app 
+ Music player project

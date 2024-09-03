@@ -1,0 +1,126 @@
+{
+    "searchResult": {
+        "tracks": [
+            {
+                "id": 1,
+                "title": "Love Story",
+                "artists": ["Taylor Swift"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 2,
+                "title": "Crazy in Love",
+                "artists": ["Beyoncé", "Jay-Z"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 3,
+                "title": "I Will Always Love You",
+                "artists": ["Whitney Houston"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 4,
+                "title": "Endless Love",
+                "artists": ["Diana Ross", "Lionel Richie"],
+                "img": "https://picsum.photos/200"
+            }
+        ],
+        "albums": [
+            {
+                "id": 1,
+                "title": "Love Deluxe",
+                "artists": ["Sade"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 2,
+                "title": "Love & War",
+                "artists": ["Tamar Braxton"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 3,
+                "title": "Love Yourself: Tear",
+                "artists": ["BTS"],
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 4,
+                "title": "Love Songs",
+                "artists": ["Elton John"],
+                "img": "https://picsum.photos/200"
+            }
+        ],
+        "artists": [
+            {
+                "id": 1,
+                "name": "Love",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 2,
+                "name": "Love Spit Love",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 3,
+                "name": "Florence + The Machine",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 4,
+                "name": "Céline Dion",
+                "img": "https://picsum.photos/200"
+            }
+        ],
+        "playlists": [
+            {
+                "id": 1,
+                "name": "Love Songs",
+                "user": "user123",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 2,
+                "name": "Romantic Hits",
+                "user": "user456",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 3,
+                "name": "Valentine's Day Vibes",
+                "user": "user789",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 4,
+                "name": "Love & Chill",
+                "user": "user101",
+                "img": "https://picsum.photos/200"
+            }
+        ],
+        "genres": [
+            {
+                "id": 1,
+                "title": "Pop",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 2,
+                "title": "R&B",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 3,
+                "title": "Soul",
+                "img": "https://picsum.photos/200"
+            },
+            {
+                "id": 4,
+                "title": "Rock",
+                "img": "https://picsum.photos/200"
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+.search-result{
+    height: 100%; /* Let it fill available height */
+    max-height: 100%; /* Do not exceed the center panel's height */
+    overflow-y: scroll;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.search-result-tracks-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.search-result h2{
+    color: var(--default-text-color);
+    font-size: 2rem;
+}
+
+.search-result-albums-list,
+.search-result-artists-list,
+.search-result-playlists-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

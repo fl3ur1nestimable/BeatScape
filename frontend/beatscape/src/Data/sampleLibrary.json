@@ -1,0 +1,182 @@
+{
+    "content": {
+        "playlists": [
+            {
+                "name": "Liked Songs",
+                "user": "Fleur",
+                "img": "logo192.png",
+                "added": "2100-01-01"
+            },
+            {
+                "name": "Chill Vibes",
+                "user": "user2",
+                "img": "logo192.png",
+                "added": "2021-02-15"
+            },
+            {
+                "name": "Workout Mix",
+                "user": "user3",
+                "img": "logo192.png",
+                "added": "2021-03-20"
+            },
+            {
+                "name": "Focus Beats",
+                "user": "user4",
+                "img": "logo192.png",
+                "added": "2021-04-05"
+            },
+            {
+                "name": "Party Hits",
+                "user": "user5",
+                "img": "logo192.png",
+                "added": "2021-05-18"
+            },
+            {
+                "name": "Oldies Goldies",
+                "user": "user6",
+                "img": "logo192.png",
+                "added": "2021-06-25"
+            },
+            {
+                "name": "Road Trip",
+                "user": "user7",
+                "img": "logo192.png",
+                "added": "2021-07-30"
+            },
+            {
+                "name": "Summer Breeze",
+                "user": "user8",
+                "img": "logo192.png",
+                "added": "2021-08-15"
+            },
+            {
+                "name": "Indie Essentials",
+                "user": "user9",
+                "img": "logo192.png",
+                "added": "2021-09-10"
+            },
+            {
+                "name": "Electronic Beats",
+                "user": "user10",
+                "img": "logo192.png",
+                "added": "2021-10-25"
+            }
+        ],
+
+        "albums": [
+            {
+                "name": "The Album",
+                "artist": "UnknownGuys",
+                "img": "logo192.png",
+                "added": "2021-06-12"
+            },
+            {
+                "name": "Dreamland",
+                "artist": "DayDreamers",
+                "img": "logo192.png",
+                "added": "2021-02-01"
+            },
+            {
+                "name": "Midnight City",
+                "artist": "NightOwls",
+                "img": "logo192.png",
+                "added": "2021-03-12"
+            },
+            {
+                "name": "Sunset Drive",
+                "artist": "TheWanderers",
+                "img": "logo192.png",
+                "added": "2021-04-22"
+            },
+            {
+                "name": "Ocean Waves",
+                "artist": "SeaLovers",
+                "img": "logo192.png",
+                "added": "2021-05-30"
+            },
+            {
+                "name": "Highway Tunes",
+                "artist": "RoadRunners",
+                "img": "logo192.png",
+                "added": "2021-06-15"
+            },
+            {
+                "name": "Skyline",
+                "artist": "SkyHigh",
+                "img": "logo192.png",
+                "added": "2021-07-22"
+            },
+            {
+                "name": "Urban Beats",
+                "artist": "CityVibes",
+                "img": "logo192.png",
+                "added": "2021-08-05"
+            },
+            {
+                "name": "Mountain Echoes",
+                "artist": "EchoChamber",
+                "img": "logo192.png",
+                "added": "2021-09-18"
+            },
+            {
+                "name": "Stardust",
+                "artist": "GalacticSounds",
+                "img": "logo192.png",
+                "added": "2021-10-01"
+            }
+        ],
+
+        "artists": [
+            {
+                "name": "UnknownGuys",
+                "img": "logo192.png",
+                "added": "2021-06-12"
+            },
+            {
+                "name": "DayDreamers",
+                "img": "logo192.png",
+                "added": "2021-02-01"
+            },
+            {
+                "name": "NightOwls",
+                "img": "logo192.png",
+                "added": "2021-03-12"
+            },
+            {
+                "name": "TheWanderers",
+                "img": "logo192.png",
+                "added": "2021-04-22"
+            },
+            {
+                "name": "SeaLovers",
+                "img": "logo192.png",
+                "added": "2021-05-30"
+            },
+            {
+                "name": "RoadRunners",
+                "img": "logo192.png",
+                "added": "2021-06-15"
+            },
+            {
+                "name": "SkyHigh",
+                "img": "logo192.png",
+                "added": "2021-07-22"
+            },
+            {
+                "name": "CityVibes",
+                "img": "logo192.png",
+                "added": "2021-08-05"
+            },
+            {
+                "name": "EchoChamber",
+                "img": "logo192.png",
+                "added": "2021-09-18"
+            },
+            {
+                "name": "GalacticSounds",
+                "img": "logo192.png",
+                "added": "2021-10-01"
+            }
+        ]
+    }
+}
