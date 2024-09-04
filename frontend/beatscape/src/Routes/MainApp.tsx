@@ -81,7 +81,6 @@ function MainApp() {
   if(searchInput === ""){}
   const [currentTime, setCurrentTime] = useState(100);
   const [duration, setDuration] = useState(180);
-  setDuration(180);
   const [volume, setVolume] = useState(50);
   const [lastVolume, setLastVolume] = useState(50);
 
@@ -277,6 +276,7 @@ function MainApp() {
     if (volume !== 0) {
       setLastVolume(volume);
     }
+    setDuration(180);
   };
 
   return (
