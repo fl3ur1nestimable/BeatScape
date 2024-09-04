@@ -1,0 +1,115 @@
+{
+    "id": 1,
+    "title": "Echoes of Eternity",
+    "artist": "The Resonants",
+    "img": "https://example.com/album-cover.jpg",
+    "fulldate": "2023-08-25",
+    "year": 2023,
+    "album": [
+        {
+            "id": 1,
+            "title": "Infinite Horizon",
+            "duration": "4:32",
+            "img": "https://example.com/song1.jpg",
+            "plays": 1050000
+        },
+        {
+            "id": 2,
+            "title": "Starlight Serenade",
+            "duration": "3:58",
+            "img": "https://example.com/song2.jpg",
+            "plays": 850000
+        },
+        {
+            "id": 3,
+            "title": "Whispers in the Wind",
+            "duration": "5:10",
+            "img": "https://example.com/song3.jpg",
+            "plays": 760000
+        },
+        {
+            "id": 4,
+            "title": "Celestial Dance",
+            "duration": "4:47",
+            "img": "https://example.com/song4.jpg",
+            "plays": 620000
+        },
+        {
+            "id": 5,
+            "title": "Echoes of Silence",
+            "duration": "4:05",
+            "img": "https://example.com/song5.jpg",
+            "plays": 940000
+        },
+        {
+            "id": 6,
+            "title": "Midnight Reverie",
+            "duration": "5:23",
+            "img": "https://example.com/song6.jpg",
+            "plays": 580000
+        },
+        {
+            "id": 7,
+            "title": "Lost in Time",
+            "duration": "4:15",
+            "img": "https://example.com/song7.jpg",
+            "plays": 810000
+        },
+        {
+            "id": 8,
+            "title": "Aurora Borealis",
+            "duration": "4:55",
+            "img": "https://example.com/song8.jpg",
+            "plays": 770000
+        },
+        {
+            "id": 9,
+            "title": "Waves of Memory",
+            "duration": "5:00",
+            "img": "https://example.com/song9.jpg",
+            "plays": 690000
+        },
+        {
+            "id": 10,
+            "title": "Eternal Echo",
+            "duration": "3:48",
+            "img": "https://example.com/song10.jpg",
+            "plays": 940000
+        },
+        {
+            "id": 11,
+            "title": "Whispers of the Sea",
+            "duration": "4:22",
+            "img": "https://example.com/song11.jpg",
+            "plays": 720000
+        },
+        {
+            "id": 12,
+            "title": "Silent Twilight",
+            "duration": "4:50",
+            "img": "https://example.com/song12.jpg",
+            "plays": 880000
+        },
+        {
+            "id": 13,
+            "title": "Nocturnal Journey",
+            "duration": "5:12",
+            "img": "https://example.com/song13.jpg",
+            "plays": 660000
+        },
+        {
+            "id": 14,
+            "title": "Dreamcatcher",
+            "duration": "4:40",
+            "img": "https://example.com/song14.jpg",
+            "plays": 740000
+        },
+        {
+            "id": 15,
+            "title": "Final Ascend",
+            "duration": "4:30",
+            "img": "https://example.com/song15.jpg",
+            "plays": 890000
+        }
+    ]
+}

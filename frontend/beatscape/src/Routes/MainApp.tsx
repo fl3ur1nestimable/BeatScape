@@ -14,13 +14,15 @@ import { Library } from "../Components/Library";
 import { LibraryAlbumProps, LibraryArtistProps, LibraryPlaylistProps } from "../Components/LibraryItem";
 import ShortcutListener from "../Components/ShorcutListener";
 import NowPlaying from "../Components/NowPlaying";
-import PlaylistPage from "../Components/PlaylistPage";
+import {PlaylistPage, AlbumPage, ArtistPage} from "../Components/Page";
 import menuDataJson from "../Data/dropdownData.json";
 import sampleDate from "../Data/sampleData.json";
 import sampleResult from "../Data/sampleResult.json";
 import Themes from "../Data/Themes.json";
 import sampleLibrary from "../Data/sampleLibrary.json";
 import Playlist from "../Data/Playlist.json";
+import Album from "../Data/Album.json";
+import Artist from "../Data/Artist.json";
 import Login from "./Login";
 
 function MainApp() {
@@ -248,10 +250,12 @@ function MainApp() {
 
   const onGoToArtist = (id: number) => {
     console.log("go to artist", id);
+    setCenterPanelContent(6);
   };
 
   const onGoToAlbum = (id: number) => {
     console.log("go to album", id);
+    setCenterPanelContent(5);
   };
 
   const onGoToPlaylist = (id: number) => {
@@ -415,6 +419,30 @@ function MainApp() {
                     onGoToArtist={onGoToArtist}
                     onGoToAlbum={onGoToAlbum}
                     onGoToUser={onGoToUser}
+                  />
+                )}
+                {centerPanelContent === 5 && (
+                  <AlbumPage
+                    id={Album.id}
+                    title = {Album.title}
+                    artist={Album.artist}
+                    img={Album.img}
+                    fulldate={Album.fulldate}
+                    year={Album.year}
+                    album={Album.album}
+                    onPlay={onPlay}
+                    onGoToArtist={onGoToArtist}
+                  />
+                )}
+                {centerPanelContent === 6 && (
+                  <ArtistPage
+                    id={Artist.id}
+                    name = {Artist.name}
+                    img={Artist.img}
+                    popular={Artist.popular}
+                    albums={Artist.albums}
+                    onPlay={onPlay}
+                    onGoToAlbum={onGoToAlbum}
                   />
                 )}
               </section>

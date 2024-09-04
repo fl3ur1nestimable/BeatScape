@@ -1,0 +1,93 @@
+{
+    "id": 1,
+    "name": "John Doe",
+    "img": "https://example.com/artist/johndoe.jpg",
+    "popular": [
+      {
+        "id": 101,
+        "title": "Hit Song 1",
+        "plays": 5000000,
+        "duration": "3:45",
+        "img": "https://example.com/popular/hitsong1.jpg"
+      },
+      {
+        "id": 102,
+        "title": "Hit Song 2",
+        "plays": 4500000,
+        "duration": "4:05",
+        "img": "https://example.com/popular/hitsong2.jpg"
+      },
+      {
+        "id": 103,
+        "title": "Hit Song 3",
+        "plays": 4200000,
+        "duration": "3:55",
+        "img": "https://example.com/popular/hitsong3.jpg"
+      },
+      {
+        "id": 104,
+        "title": "Hit Song 4",
+        "plays": 3800000,
+        "duration": "4:10",
+        "img": "https://example.com/popular/hitsong4.jpg"
+      },
+      {
+        "id": 105,
+        "title": "Hit Song 5",
+        "plays": 3600000,
+        "duration": "4:00",
+        "img": "https://example.com/popular/hitsong5.jpg"
+      }
+    ],
+    "albums": [
+      {
+        "id": 201,
+        "title": "Album One",
+        "img": "https://example.com/album/albumone.jpg",
+        "year": 2010
+      },
+      {
+        "id": 202,
+        "title": "Album Two",
+        "img": "https://example.com/album/albumtwo.jpg",
+        "year": 2012
+      },
+      {
+        "id": 203,
+        "title": "Album Three",
+        "img": "https://example.com/album/albumthree.jpg",
+        "year": 2014
+      },
+      {
+        "id": 204,
+        "title": "Album Four",
+        "img": "https://example.com/album/albumfour.jpg",
+        "year": 2016
+      },
+      {
+        "id": 205,
+        "title": "Album Five",
+        "img": "https://example.com/album/albumfive.jpg",
+        "year": 2018
+      },
+      {
+        "id": 206,
+        "title": "Album Six",
+        "img": "https://example.com/album/albumsix.jpg",
+        "year": 2020
+      },
+      {
+        "id": 207,
+        "title": "Album Seven",
+        "img": "https://example.com/album/albumseven.jpg",
+        "year": 2022
+      },
+      {
+        "id": 208,
+        "title": "Album Eight",
+        "img": "https://example.com/album/albumeight.jpg",
+        "year": 2024
+      }
+    ]
+  }
+  
