@@ -85,7 +85,8 @@
 }
 
 .playlist-page-song:hover,
-.album-page-song:hover {
+.album-page-song:hover,
+.artist-page-song:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 

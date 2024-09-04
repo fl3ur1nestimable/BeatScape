@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./Login.css";
 
 interface LoginProps {
@@ -7,22 +6,6 @@ interface LoginProps {
 }
 
 const Login: React.FC<LoginProps> = ({ onLogged }) => {
-
-    useEffect(() => {
-        const handleKeyDown = (e: any) => {
-            console.log(e.keycode)
-            if (e.keycode === 13) {
-                if (isLogin) {
-                    handleLogin();
-                }
-                handleSignup();
-            }
-        };
-        document.addEventListener("keydown", handleKeyDown);
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown)
-        }
-    }, []);
 
     const [isLogin, setIsLogin] = useState(false);
     const [name, setName] = useState('');
@@ -59,6 +42,10 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
             return;
         }
         setError('');
+        setName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPwd('');
         setIsLogin(true);
     }
 
@@ -72,6 +59,10 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
             return;
         }
         setError('');
+        setName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPwd('');
         setTimeout(() => {
             onLogged();
         }, 1000);
@@ -84,13 +75,7 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
         setConfirmPwd('');
         setIsLogin(!isLogin);
         setError('');
-        //empty all fields
-        const inputs = document.querySelectorAll('input');
-        inputs.forEach(input => {
-            input.value = '';
-        });
     }
-
 
     return (
         <div className="login">
@@ -116,22 +101,22 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
                 {isLogin ?
                     <div className="login-login">
                         <label>Email</label>
-                        <input type="text" onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} id="1" />
                         <label>Password</label>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} id="2" />
                         <button onClick={handleLogin}>Submit</button>
                         {error && <p className="error">{error}</p>}
                         <p>Don't have an account? <span onClick={() => swap()}>Sign up</span></p>
                     </div> :
                     <div className="login-signup">
                         <label>Name</label>
-                        <input type="text" onChange={(e) => setName(e.target.value)} />
+                        <input type="text" value={name} onChange={(e) => setName(e.target.value)} id="3" />
                         <label>Email</label>
-                        <input type="text" onChange={(e) => setEmail(e.target.value)} />
+                        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} id="4" />
                         <label>Password</label>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         <label>Confirm Password</label>
-                        <input type="password" onChange={(e) => setConfirmPwd(e.target.value)} />
+                        <input type="password" value={confirmPwd} onChange={(e) => setConfirmPwd(e.target.value)} />
                         <button onClick={handleSignup}>Sign Up</button>
                         {error && <p className="error">{error}</p>}
                         <p>Already have an account? <span onClick={() => swap()}>Login</span></p>
@@ -140,8 +125,6 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
             </div>
         </div>
     );
-
 }
 
 export default Login;
-

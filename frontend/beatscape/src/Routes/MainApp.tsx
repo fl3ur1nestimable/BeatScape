@@ -70,7 +70,7 @@ function MainApp() {
   });
 
 
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   const [centerPanel, setCenterPanel] = useState(false);
   const [centerPanelContent, setCenterPanelContent] = useState(0);
