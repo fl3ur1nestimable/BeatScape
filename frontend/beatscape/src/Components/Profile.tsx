@@ -21,6 +21,7 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
     const [confirmPwd, setConfirmPwd] = useState('');
     const [name, setName] = useState(user.name);
     const [profilePic, setProfilePic] = useState("");
+    const [loaded,setLoaded] = useState(false);
 
     const handleSave = () => {
         close();
@@ -46,7 +47,12 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
             <div className="profile-content">
                 <h1>Profile</h1>
                 <div className="profile-header">
-                    <img src="logo fraise.png" alt="profile image" />
+                    <img 
+                        src="logo fraise.png" 
+                        alt="profile image" 
+                        loading="lazy"
+                        onLoad={() => setLoaded(true)}
+                    />
                     <div className="user-header">
                         <h2>{user.name}</h2>
                         <span> Joined : {user.joinDate}</span>

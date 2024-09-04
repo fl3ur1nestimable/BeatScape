@@ -12,6 +12,31 @@
     border-radius: 5px;
 }
 
+.img-placeholder{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgb(110, 110, 110);
+    position : absolute;
+    top : 50%;
+    left :50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+@keyframes pulse{
+    0%, 100%{
+        background-color: rgb(65, 64, 64)
+    }
+
+    50%{
+        background-color: rgb(180, 180, 180)
+    }
+}
+
 .card-play{
     all : unset;
     position: absolute;

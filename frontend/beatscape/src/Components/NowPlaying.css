@@ -10,6 +10,7 @@
     border-radius: 10px;
     border : 3px solid var(--default-border-color);
     background-color: var(--default-secondary-bg-color);
+    position : relative;
 }
 
 .song-card img{
@@ -56,4 +57,25 @@
 
 .liked{
     color: rgb(228, 53, 82);
+}
+
+.img-placeholder-n{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top : 0;
+    background-color: rgb(110, 110, 110); 
+}
+
+.song-img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    position: relative;
 }

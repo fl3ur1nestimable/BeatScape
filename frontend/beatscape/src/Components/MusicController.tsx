@@ -16,25 +16,22 @@ interface MusicControllerProps {
     onSeek: (value: number) => void;
     currentTime: number;
     duration: number;
+    isPlaying: boolean;
+    isShuffle: boolean;
+    repeat: number;
 }
 
-const MusicController: React.FC<MusicControllerProps> = ({ onPlay, onPause, onPrevious, onNext, onRepeat, onShuffle, onSeek, currentTime, duration }) => {
+const MusicController: React.FC<MusicControllerProps> = ({ onPlay, onPause, onPrevious, onNext, onRepeat, onShuffle, onSeek, currentTime, duration, isPlaying, isShuffle, repeat }) => {
     
     document.body.style.setProperty('--value', currentTime / duration * 100 + '%');
-    
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isRepeat, setIsRepeat] = useState(0);
-    const [isShuffle, setIsShuffle] = useState(false);
 
     const [mouseDown, setMouseDown] = useState(false);
 
     const play = () => {
-        setIsPlaying(true);
         onPlay(0, 'track');
     }
 
     const pause = () => {
-        setIsPlaying(false);
         onPause();
     }
 
@@ -46,15 +43,11 @@ const MusicController: React.FC<MusicControllerProps> = ({ onPlay, onPause, onPr
         onNext();
     }
 
-    const repeat = () => {
-        setIsRepeat(isRepeat === 0 ? 1 : isRepeat === 1 ? 2 : 0);
-        onRepeat(isRepeat);
+    const handlerepeat = () => {
+        onRepeat(repeat === 0 ? 1 : repeat === 1 ? 2 : 0);
     }
 
     const shuffle = () => {
-        setIsShuffle(!isShuffle);
-        const shuffle = document.querySelector('.shuffle') as HTMLElement;
-        shuffle.classList.toggle('active');
         onShuffle();
     }
 
@@ -81,11 +74,11 @@ const MusicController: React.FC<MusicControllerProps> = ({ onPlay, onPause, onPr
     return(
         <div className="music-controler">
             <div className="controls">
-                <button className="shuffle" onClick={shuffle}><IoShuffle /></button>
+                <button className={"shuffle" + (isShuffle ? " active" : "")} onClick={shuffle}><IoShuffle /></button>
                 <button className="previous" onClick={previous}><GiPreviousButton /></button>
                 {isPlaying ? <button onClick={pause}><FaRegCirclePause /></button> : <button onClick={play}><FaRegCirclePlay /></button>}
                 <button onClick={next}><GiNextButton /></button>
-                <button className="repeatbtn" onClick={repeat}>{isRepeat === 0 ? <LuRepeat className="norepeat" /> : isRepeat === 1 ? <LuRepeat className="repeat" /> : <LuRepeat1 className="repeat-one" />}</button>
+                <button className="repeatbtn" onClick={handlerepeat}>{repeat === 0 ? <LuRepeat className="norepeat" /> : repeat === 1 ? <LuRepeat className="repeat" /> : <LuRepeat1 className="repeat-one" />}</button>
             </div>
             <div className="progress-bar">
                 <span className="time">{Math.floor(currentTime / 60)}:{(currentTime % 60).toString().padStart(2, '0')}</span>

@@ -1,14 +1,36 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Login.css";
 
-function Login() {
-    const [isLogin, setIsLogin] = useState(true);
+interface LoginProps {
+    onLogged: () => void; 
+  }
+
+const Login: React.FC<LoginProps> = ({onLogged}) => {
+
+    useEffect(() => {
+        const handleKeyDown = (e : any) =>{
+            console.log(e.keycode)
+            if(e.keycode === 13){
+                if(isLogin){
+                    handleLogin();
+                }
+                handleSignup();
+            }
+        };
+        document.addEventListener("keydown",handleKeyDown);
+        return() =>{
+            document.removeEventListener("keydown",handleKeyDown)
+        }
+    },[]);
+
+    const [isLogin, setIsLogin] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
     const [error, setError] = useState('');
+    const [loaded, setLoaded] = useState(false);
 
     const passwordIsStrong = (pwd : string) => {
         return pwd.length >= 8 && /[A-Z]/.test(pwd) && /[a-z]/.test(pwd) && /[0-9]/.test(pwd) && /[!@#$%^&*-_]/.test(pwd);
@@ -37,6 +59,7 @@ function Login() {
             return;
         }
         setError('');
+        setIsLogin(true);
     }
 
     const handleLogin = () => {
@@ -49,6 +72,9 @@ function Login() {
             return;
         }
         setError('');
+        setTimeout(() => {
+            onLogged();
+        }, 1000);
     }
 
     const swap = () => {
@@ -69,7 +95,7 @@ function Login() {
     return (
         <div className="login">
             <div className={isLogin ? "login-image right" : "login-image left"}>
-            <img src="logo512.png" alt="logo" />
+            <img src="logo512classic.png" alt="logo" loading="lazy" onLoad={() => setLoaded(true)}/>
             <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
                 <path id="curve" d="
                     M 400, 0

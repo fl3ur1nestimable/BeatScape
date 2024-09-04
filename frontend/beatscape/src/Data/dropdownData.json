@@ -8,8 +8,11 @@
             "shortcut": "Ctrl+W"
           },
           {
-            "label": "Exit",
-            "shortcut": "Ctrl+Q"
+            "label": "About"
+          },
+          {
+            "label": "Documentation",
+            "shortcut": "F1"
           }
         ]
       },
@@ -62,23 +65,10 @@
             "shortcut": "Ctrl+Down Arrow"
           }
         ]
-      },
-      {
-        "label": "Help",
-        "items": [
-          {
-            "label": "Documentation",
-            "shortcut": "F1"
-          },
-          {
-            "label": "About"
-          }
-        ]
       }
     ],
     "shortcutActions": {
       "Ctrl+W": "LogOut",
-      "Ctrl+Q": "Exit",
       "Ctrl+F": "Search",
       "Ctrl+P": "Settings",
       "Space": ["Play", "Pause"],

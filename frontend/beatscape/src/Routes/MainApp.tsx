@@ -39,7 +39,6 @@ function MainApp() {
   const [centerPanel, setCenterPanel] = useState(false);
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
-
   const [searchInput, setSearchInput] = useState('');
 
   const [currentTime, setCurrentTime] = useState(100);
@@ -50,11 +49,19 @@ function MainApp() {
   const [volume, setVolume] = useState(50);
   const [lastVolume, setLastVolume] = useState(50);
 
-  const [isRepeat, setIsRepeat] = useState(false);
+  const [Repeat, setRepeat] = useState(0);
   const [isShuffle, setIsShuffle] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   
   const [isAutoplay, setIsAutoplay] = useState(false);
 
+  const [theme, setTheme] = useState('Classic');
+
+
+  const onLogged = () =>{
+    setIsLogged(true);
+  }
 
   const onAutoplaySwitch = () => {
     setIsAutoplay(!isAutoplay);
@@ -67,6 +74,7 @@ function MainApp() {
             t.vars.map((v) => {
                 root.style.setProperty(v.name, v.value);
             });
+            setTheme(theme);
           }
       });
   }
@@ -122,10 +130,12 @@ function MainApp() {
 
   const onPlay = (id : number, type : string) => {
     console.log('play', id, type);
+    setIsPlaying(true);
   }
 
   const onPause = () => {
     console.log('pause');
+    setIsPlaying(false);
   }
 
   const onPrevious = () => {
@@ -137,11 +147,11 @@ function MainApp() {
   }
 
   const onRepeat = (repeat : number) => {
-    console.log('repeat', repeat);
+    setRepeat(repeat);
   }
 
   const onShuffle = () => {
-    console.log('shuffle');
+    setIsShuffle(!isShuffle);
   }
 
   const onSeek = (percent : number) => {
@@ -157,7 +167,8 @@ function MainApp() {
   }
 
   const onLogout = () => {
-    console.log('logout');
+    onThemeSwitch('Classic');
+    setIsLogged(false);
   }
 
   const onGoToArtist = (id : number) => {
@@ -191,10 +202,37 @@ function MainApp() {
 
   return (
     <div>
-      {isFullScreen ? <div>
-        <button className='close-fullscreen' onClick={() => toggleFullScreen()}>
-          <MdOutlineCloseFullscreen />
-        </button>
+      {isFullScreen ? 
+      <div className='fullscreen-app'>
+        <img src={`logo512${theme.toLowerCase()}.png`} className="center-logo-fs" alt="logo" loading='lazy' />
+        <div className="nowplaying-fs">
+          <h3>Lune Argentée</h3>
+          <p>Fl3ur1nestimable</p>
+        </div>
+        <div className="bottom-fs">
+          <VolumeController
+                onVolumeChange={(volume: number) => onVolumeChange(volume)}
+                volume={volume}
+                onMute={() => onVolumeChange(volume === 0 ? lastVolume : 0)}
+          />
+          <MusicController
+            onPlay={onPlay}
+            onPause={onPause}
+            onPrevious={onPrevious}
+            onNext={onNext}
+            onRepeat={onRepeat}
+            onShuffle={onShuffle}
+            onSeek={onSeek}
+            currentTime={currentTime}
+            duration={duration}
+            isPlaying={isPlaying}
+            isShuffle={isShuffle}
+            repeat={Repeat}
+          />
+          <div className='bottom-bar-right'>
+            <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOutlineCloseFullscreen /></button>
+          </div>
+        </div>
       </div> :
       isLogged ? 
       <div className='app'>
@@ -207,7 +245,9 @@ function MainApp() {
                 </div>
                 
                 <button className='toogle-center-panel' onClick={()=> toggleCenterPanel()}>
-                  <img src="logo192nobg.png" alt="logo" loading='lazy' />
+                  <img src={theme === 'Light' ? "logo192black.png" : "logo192nobg.png"}
+                      alt="logo" 
+                      loading='lazy' />
                 </button>
               </div>
               <SearchBar onSearch={(value : string) => onSearch(value)} />
@@ -249,16 +289,22 @@ function MainApp() {
                 onSeek={onSeek}
                 currentTime={currentTime}
                 duration={duration}
+                isPlaying={isPlaying}
+                isShuffle={isShuffle}
+                repeat={Repeat}
               />
               <div className='bottom-bar-right'>
-                <button className='pip'><BsPip /></button>
                 <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOpenInFull /></button>
               </div>
             </section>
-            <img src="logo192.png" className="app-center-logo" alt="logo" loading='lazy' />
+            <img 
+            src={`logo512${theme.toLowerCase()}.png`} 
+            className="app-center-logo" 
+            alt="logo" 
+            loading='lazy' />
           </div>
         </div>
-        : <div><Login/></div> 
+        : <div><Login onLogged={onLogged}/></div> 
       }
       </div>
   );
