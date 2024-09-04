@@ -78,9 +78,10 @@ function MainApp() {
   const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
 
   const [searchInput, setSearchInput] = useState("");
-
+  if(searchInput === ""){}
   const [currentTime, setCurrentTime] = useState(100);
   const [duration, setDuration] = useState(180);
+  setDuration(180);
   const [volume, setVolume] = useState(50);
   const [lastVolume, setLastVolume] = useState(50);
 

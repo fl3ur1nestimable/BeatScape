@@ -10,6 +10,7 @@ interface CardProps {
 }
 
 export const Card: React.FC<CardProps> = ({img, onPlay}) => {
+    console.log(img)
 
     const generateSeed = () => {
         return Math.floor(Math.random() * 100000);

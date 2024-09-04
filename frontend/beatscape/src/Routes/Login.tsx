@@ -14,6 +14,7 @@ const Login: React.FC<LoginProps> = ({ onLogged }) => {
     const [confirmPwd, setConfirmPwd] = useState('');
     const [error, setError] = useState('');
     const [loaded, setLoaded] = useState(false);
+    if(!loaded) {};
 
     const passwordIsStrong = (pwd: string) => {
         return pwd.length >= 8 && /[A-Z]/.test(pwd) && /[a-z]/.test(pwd) && /[0-9]/.test(pwd) && /[!@#$%^&*-_]/.test(pwd);

@@ -15,23 +15,12 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
 
     const [changePwd, setChangePwd] = useState(false);
-    const [newPwd, setNewPwd] = useState('');
-    const [confirmPwd, setConfirmPwd] = useState('');
-    const [name, setName] = useState(user.name);
-    const [profilePic, setProfilePic] = useState<File | null>(null);
-    const [loaded, setLoaded] = useState(false);
+
 
     const handleSave = () => {
         setChangePwd(false);
         close();
         onSave();
-    }
-
-    const changeImage = () => {
-        if (profilePic) {
-            const img = document.querySelector('.profile-header img') as HTMLImageElement;
-            img.src = URL.createObjectURL(profilePic);
-        }
     }
 
     const open = () => {
@@ -54,7 +43,6 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
                         src="logo fraise.png" 
                         alt="profile image" 
                         loading="lazy"
-                        onLoad={() => setLoaded(true)}
                     />
                     <div className="user-header">
                         <h2>{user.name}</h2>
@@ -71,17 +59,17 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
                     </div>
                     <div className="dialog-content">
                         <label>Name</label>
-                        <input type="text" placeholder="Name" value={user.name} maxLength={20} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder="Name" value={user.name} maxLength={20} />
                         {!changePwd && <button onClick={() => setChangePwd(true)}>Change Password</button>}
                         {changePwd &&
                             <div className="pwd">
-                                <input type="password" placeholder="New Password" onChange={(e) => setNewPwd(e.target.value)} />
-                                <input type="password" placeholder="Confirm Password" onChange={(e) => setConfirmPwd(e.target.value)} />
+                                <input type="password" placeholder="New Password" />
+                                <input type="password" placeholder="Confirm Password"  />
                                 <button className="cancel" onClick={() => setChangePwd(false)}>Cancel</button>
                             </div>
                         }
                         <label>Profile Picture</label>
-                        <input type="file" accept="image/*" onChange={(e) => setProfilePic(e.target.files![0])} />
+                        <input type="file" accept="image/*" />
                         <button onClick={() => handleSave()}>Save</button>
                     </div>
                 </dialog>

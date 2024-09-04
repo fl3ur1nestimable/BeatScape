@@ -17,6 +17,8 @@ export interface LibraryPlaylistProps {
 export const LibraryPlaylist: React.FC<LibraryPlaylistProps> = ({ name, user, img, onGoToPlaylist }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
+    console.log(img)
+
     return (
         <div className="library-item" onClick={() => onGoToPlaylist(0)}>
             <img
@@ -50,6 +52,7 @@ export interface LibraryAlbumProps {
 export const LibraryAlbum: React.FC<LibraryAlbumProps> = ({ name, artist, img, onGoToAlbum }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
+    console.log(img)
 
     return (
         <div className="library-item" onClick={() => onGoToAlbum(0)}>
@@ -83,6 +86,8 @@ export interface LibraryArtistProps {
 export const LibraryArtist: React.FC<LibraryArtistProps> = ({ name, img, onGoToArtist }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
+    console.log(img)
+
 
     return (
         <div className="library-item" onClick={() => onGoToArtist(0)}>
