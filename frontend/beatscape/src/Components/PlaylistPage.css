@@ -1,0 +1,76 @@
+.playlist-page {
+    height: 100%;
+    /* Let it fill available height */
+    max-height: 100%;
+    overflow-y: scroll;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.playlist-page-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.playlist-page-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    flex : 0 0 150px;
+}
+
+.playlist-page-title {
+    color: var(--default-title-color);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.playlist-page-songs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.playlist-page-songs-header {
+    display: grid;
+    grid-template-columns: 4fr 4fr 1fr;
+    font-weight: 600;
+    color: var(--default-text-color);
+    border-bottom: 1px solid var(--default-border-color);
+    padding: 0.5rem 0.5rem;
+}
+
+.playlist-page-song{
+    display: grid;
+    grid-template-columns: 4fr 4fr 1fr;
+    padding: 0.5rem 0.5rem;
+    /* aligin in the center */
+    align-items: center;
+}
+
+.playlist-page-song-card{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.song-img-info {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    flex : 0 0 50px;
+}
+
+.playlist-page-song-title {
+    color: var(--default-text-color);
+    font-weight: 600;
+}
+
+.playlist-page-song-artist {
+    color: var(--default-text-color);
+    font-weight: 100;
+}

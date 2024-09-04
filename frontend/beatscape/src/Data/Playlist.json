@@ -1,0 +1,338 @@
+{
+    "id": 1,
+    "title": "Chill Vibes",
+    "user": "DJ Smooth",
+    "img": "https://example.com/playlist-cover.jpg",
+    "playlist": [
+        {
+            "id": 1,
+            "title": "Sunset Drive",
+            "artists": [
+                "Artist A"
+            ],
+            "album": "Sunset Album",
+            "duration": "3:45",
+            "img": "https://example.com/sunset-drive.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Ocean Waves",
+            "artists": [
+                "Artist B"
+            ],
+            "album": "Ocean Dreams",
+            "duration": "4:10",
+            "img": "https://example.com/ocean-waves.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Mellow Morning",
+            "artists": [
+                "Artist C"
+            ],
+            "album": "Mellow Tunes",
+            "duration": "2:58",
+            "img": "https://example.com/mellow-morning.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Golden Hour",
+            "artists": [
+                "Artist D"
+            ],
+            "album": "Golden Album",
+            "duration": "4:22",
+            "img": "https://example.com/golden-hour.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Rainy Nights",
+            "artists": [
+                "Artist E"
+            ],
+            "album": "Rainy Days",
+            "duration": "3:30",
+            "img": "https://example.com/rainy-nights.jpg"
+        },
+        {
+            "id": 6,
+            "title": "City Lights",
+            "artists": [
+                "Artist F"
+            ],
+            "album": "Urban Beats",
+            "duration": "3:55",
+            "img": "https://example.com/city-lights.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Easy Breezy",
+            "artists": [
+                "Artist G"
+            ],
+            "album": "Breezy Tunes",
+            "duration": "4:00",
+            "img": "https://example.com/easy-breezy.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Whispering Winds",
+            "artists": [
+                "Artist H"
+            ],
+            "album": "Nature Sounds",
+            "duration": "5:12",
+            "img": "https://example.com/whispering-winds.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Stargazing",
+            "artists": [
+                "Artist I"
+            ],
+            "album": "Night Sky",
+            "duration": "3:43",
+            "img": "https://example.com/stargazing.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Lazy Afternoon",
+            "artists": [
+                "Artist J"
+            ],
+            "album": "Chill Time",
+            "duration": "4:18",
+            "img": "https://example.com/lazy-afternoon.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Into the Woods",
+            "artists": [
+                "Artist K"
+            ],
+            "album": "Nature Walks",
+            "duration": "3:35",
+            "img": "https://example.com/into-the-woods.jpg"
+        },
+        {
+            "id": 12,
+            "title": "Moonlight Sonata",
+            "artists": [
+                "Artist L"
+            ],
+            "album": "Classical Nights",
+            "duration": "5:45",
+            "img": "https://example.com/moonlight-sonata.jpg"
+        },
+        {
+            "id": 13,
+            "title": "Serenity",
+            "artists": [
+                "Artist M"
+            ],
+            "album": "Calm Waves",
+            "duration": "4:01",
+            "img": "https://example.com/serenity.jpg"
+        },
+        {
+            "id": 14,
+            "title": "Quiet Moments",
+            "artists": [
+                "Artist N"
+            ],
+            "album": "Soft Sounds",
+            "duration": "3:58",
+            "img": "https://example.com/quiet-moments.jpg"
+        },
+        {
+            "id": 15,
+            "title": "Deep Blue",
+            "artists": [
+                "Artist O"
+            ],
+            "album": "Ocean Depths",
+            "duration": "4:16",
+            "img": "https://example.com/deep-blue.jpg"
+        },
+        {
+            "id": 16,
+            "title": "Twilight",
+            "artists": [
+                "Artist P"
+            ],
+            "album": "Evening Glow",
+            "duration": "3:52",
+            "img": "https://example.com/twilight.jpg"
+        },
+        {
+            "id": 17,
+            "title": "Wanderlust",
+            "artists": [
+                "Artist Q"
+            ],
+            "album": "Travel Tunes",
+            "duration": "4:08",
+            "img": "https://example.com/wanderlust.jpg"
+        },
+        {
+            "id": 18,
+            "title": "Flowing Rivers",
+            "artists": [
+                "Artist R"
+            ],
+            "album": "Nature's Flow",
+            "duration": "3:47",
+            "img": "https://example.com/flowing-rivers.jpg"
+        },
+        {
+            "id": 19,
+            "title": "Zen Garden",
+            "artists": [
+                "Artist S"
+            ],
+            "album": "Peaceful Sounds",
+            "duration": "4:20",
+            "img": "https://example.com/zen-garden.jpg"
+        },
+        {
+            "id": 20,
+            "title": "Summer Breeze",
+            "artists": [
+                "Artist T"
+            ],
+            "album": "Warm Days",
+            "duration": "3:40",
+            "img": "https://example.com/summer-breeze.jpg"
+        },
+        {
+            "id": 21,
+            "title": "Aurora",
+            "artists": [
+                "Artist U"
+            ],
+            "album": "Northern Lights",
+            "duration": "4:32",
+            "img": "https://example.com/aurora.jpg"
+        },
+        {
+            "id": 22,
+            "title": "Crystal Clear",
+            "artists": [
+                "Artist V"
+            ],
+            "album": "Pure Sound",
+            "duration": "4:05",
+            "img": "https://example.com/crystal-clear.jpg"
+        },
+        {
+            "id": 23,
+            "title": "Tranquility",
+            "artists": [
+                "Artist W"
+            ],
+            "album": "Calm Waves",
+            "duration": "3:59",
+            "img": "https://example.com/tranquility.jpg"
+        },
+        {
+            "id": 24,
+            "title": "Dusk Till Dawn",
+            "artists": [
+                "Artist X"
+            ],
+            "album": "Nightfall",
+            "duration": "4:10",
+            "img": "https://example.com/dusk-till-dawn.jpg"
+        },
+        {
+            "id": 25,
+            "title": "Mountain Air",
+            "artists": [
+                "Artist Y"
+            ],
+            "album": "High Peaks",
+            "duration": "3:38",
+            "img": "https://example.com/mountain-air.jpg"
+        },
+        {
+            "id": 26,
+            "title": "Horizon",
+            "artists": [
+                "Artist Z"
+            ],
+            "album": "Endless Views",
+            "duration": "4:25",
+            "img": "https://example.com/horizon.jpg"
+        },
+        {
+            "id": 27,
+            "title": "Eternal Sunshine",
+            "artists": [
+                "Artist AA"
+            ],
+            "album": "Bright Days",
+            "duration": "3:55",
+            "img": "https://example.com/eternal-sunshine.jpg"
+        },
+        {
+            "id": 28,
+            "title": "Calm Waters",
+            "artists": [
+                "Artist AB"
+            ],
+            "album": "Soothing Sounds",
+            "duration": "4:12",
+            "img": "https://example.com/calm-waters.jpg"
+        },
+        {
+            "id": 29,
+            "title": "Desert Winds",
+            "artists": [
+                "Artist AC"
+            ],
+            "album": "Desert Dreams",
+            "duration": "3:48",
+            "img": "https://example.com/desert-winds.jpg"
+        },
+        {
+            "id": 30,
+            "title": "Mystic Forest",
+            "artists": [
+                "Artist AD"
+            ],
+            "album": "Enchanted Woods",
+            "duration": "4:18",
+            "img": "https://example.com/mystic-forest.jpg"
+        },
+        {
+            "id": 31,
+            "title": "Chasing Clouds",
+            "artists": [
+                "Artist AE"
+            ],
+            "album": "Skyward",
+            "duration": "4:00",
+            "img": "https://example.com/chasing-clouds.jpg"
+        },
+        {
+            "id": 32,
+            "title": "Echoes",
+            "artists": [
+                "Artist AF"
+            ],
+            "album": "Sound Waves",
+            "duration": "4:08",
+            "img": "https://example.com/echoes.jpg"
+        },
+        {
+            "id": 33,
+            "title": "Silver Lining",
+            "artists": [
+                "Artist AG"
+            ],
+            "album": "Bright Days",
+            "duration": "4:05",
+            "img": "https://example.com/silver-lining.jpg"
+        }
+    ]
+}

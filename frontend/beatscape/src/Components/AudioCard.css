@@ -7,6 +7,12 @@
     padding: 0.5rem;
 }
 
+.track-img, .album-img, .artist-img, .playlist-img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5px;
+}
+
 .track-card-info{
     display: flex;
     flex-direction: column;

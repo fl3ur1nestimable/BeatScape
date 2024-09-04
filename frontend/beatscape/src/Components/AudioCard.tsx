@@ -44,12 +44,12 @@ interface ArtistCardProps {
 export const ArtistCard: React.FC<ArtistCardProps> = ({id, name, img, onPlay, onGoToArtist}) => {
     
     return(
-        <div className="artist-card">
+        <div className="artist-card" onClick={() => onGoToArtist(id)} >
             <div className="artist-img">
                 <Card img={img} onPlay={() => onPlay(id,"artist")}/>
             </div>
             <div className="artist-card-info">
-                <h3 onClick={() => onGoToArtist(id)} className="artist-card-name">{name}</h3>
+                <h3 className="artist-card-name">{name}</h3>
             </div>
         </div>
     );
@@ -69,12 +69,12 @@ interface PlaylistCardProps {
 export const PlaylistCard: React.FC<PlaylistCardProps> = ({id, title, user, img, onPlay, onGoToPlaylist, onGoToUser}) => {
     
     return(
-        <div className="playlist-card">
+        <div className="playlist-card" onClick={() => onGoToPlaylist(id)}>
             <div className="playlist-img">
                 <Card img={img} onPlay={() => onPlay(id,"playlist")}/>
             </div>
             <div className="playlist-card-info">
-                <h3 onClick={() => onGoToPlaylist(id)} className="playlist-card-title">{title}</h3>
+                <h3 className="playlist-card-title">{title}</h3>
                 <p className="playlist-card-user" onClick={() => onGoToUser(id)}>{user}</p>
             </div>
         </div>
@@ -95,12 +95,12 @@ interface AlbumCardProps {
 export const AlbumCard: React.FC<AlbumCardProps> = ({id, title, img, artists, onPlay, onGoToAlbum, onGoToArtist}) => {
     
     return(
-        <div className="album-card">
+        <div className="album-card" onClick={() => onGoToAlbum(id)}>
             <div className="album-img">
                 <Card img={img} onPlay={() => onPlay(id,"album")}/>
             </div>
             <div className="album-card-info">
-                <h3 onClick={() => onGoToAlbum(id)} className="album-card-title">{title}</h3>
+                <h3 className="album-card-title">{title}</h3>
                 {artists.map((artist, index) => {
                     return(
                         <p key={index} className="album-card-artist" onClick={() => onGoToArtist(id)}>{artist}</p>

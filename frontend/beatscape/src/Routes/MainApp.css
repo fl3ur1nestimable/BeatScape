@@ -16,7 +16,7 @@
     }
 }
 
-.app{
+.app.show{
     background-color: var(--default-bg-color);
     color: var(--default-text-color);
     height: 100vh;
@@ -25,6 +25,10 @@
     min-width: 850px;
     overflow: hidden;
     position: relative;
+}
+
+.app.hide{
+    display: none;
 }
 
 .app-header{
@@ -234,7 +238,7 @@
     z-index: 10;
 }
 
-.fullscreen-app{
+.fullscreen-app.show{
     position: fixed;
     top: 0;
     left: 0;
@@ -247,6 +251,10 @@
     align-items: stretch;
     justify-content: center;
     padding: 0.5rem;
+}
+
+.fullscreen-app.hide{
+    display: none;
 }
 
 .center-logo-fs{

@@ -1,8 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import "./Profile.css";
-import logoF from './logo fraise.png';
 
 interface ProfileProps {
     user: {
@@ -12,7 +10,7 @@ interface ProfileProps {
       profilePic: string;
     };
     onSave: () => void; 
-  }
+}
 
 const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
 
@@ -20,16 +18,20 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
     const [newPwd, setNewPwd] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
     const [name, setName] = useState(user.name);
-    const [profilePic, setProfilePic] = useState("");
-    const [loaded,setLoaded] = useState(false);
+    const [profilePic, setProfilePic] = useState<File | null>(null);
+    const [loaded, setLoaded] = useState(false);
 
     const handleSave = () => {
+        setChangePwd(false);
         close();
-        
+        onSave();
     }
 
     const changeImage = () => {
-
+        if (profilePic) {
+            const img = document.querySelector('.profile-header img') as HTMLImageElement;
+            img.src = URL.createObjectURL(profilePic);
+        }
     }
 
     const open = () => {
@@ -38,6 +40,7 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
     }
 
     const close = () => {
+        setChangePwd(false);
         const dialog = document.querySelector('.profile-change') as HTMLDialogElement;
         dialog.close();
     }
@@ -55,10 +58,10 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
                     />
                     <div className="user-header">
                         <h2>{user.name}</h2>
-                        <span> Joined : {user.joinDate}</span>
+                        <span>Joined : {user.joinDate}</span>
                     </div>
                 </div>
-                <p>Email : {user.email}</p>
+                <p>Email: {user.email}</p>
                 <button className="modify-btn" onClick={() => open()}>Modify profile</button>
                 
                 <dialog className="profile-change">
@@ -68,7 +71,7 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
                     </div>
                     <div className="dialog-content">
                         <label>Name</label>
-                        <input type="text" placeholder="Name" defaultValue={user.name} maxLength={20} onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder="Name" value={user.name} maxLength={20} onChange={(e) => setName(e.target.value)} />
                         {!changePwd && <button onClick={() => setChangePwd(true)}>Change Password</button>}
                         {changePwd &&
                             <div className="pwd">
@@ -78,14 +81,13 @@ const Profile: React.FC<ProfileProps> = ({ user, onSave }) => {
                             </div>
                         }
                         <label>Profile Picture</label>
-                        <input type="file" accept="image/*" />
+                        <input type="file" accept="image/*" onChange={(e) => setProfilePic(e.target.files![0])} />
                         <button onClick={() => handleSave()}>Save</button>
                     </div>
                 </dialog>
             </div>
         </div>
     );
-
 }
 
 export default Profile;

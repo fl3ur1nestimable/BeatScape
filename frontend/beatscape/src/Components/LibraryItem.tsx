@@ -11,13 +11,14 @@ export interface LibraryPlaylistProps {
     user: string;
     img: string;
     added: string;
+    onGoToPlaylist: (id: number) => void;
 }
 
-export const LibraryPlaylist: React.FC<LibraryPlaylistProps> = ({ name, user, img }) => {
+export const LibraryPlaylist: React.FC<LibraryPlaylistProps> = ({ name, user, img, onGoToPlaylist }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
     return (
-        <div className="library-item">
+        <div className="library-item" onClick={() => onGoToPlaylist(0)}>
             <img
                 src={`https://picsum.photos/seed/${seed}/200`}
                 alt="playlist image"
@@ -43,14 +44,15 @@ export interface LibraryAlbumProps {
     artist: string;
     img: string;
     added: string;
+    onGoToAlbum: (id: number) => void;
 }
 
-export const LibraryAlbum: React.FC<LibraryAlbumProps> = ({ name, artist, img }) => {
+export const LibraryAlbum: React.FC<LibraryAlbumProps> = ({ name, artist, img, onGoToAlbum }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
 
     return (
-        <div className="library-item">
+        <div className="library-item" onClick={() => onGoToAlbum(0)}>
             <img
                 src={`https://picsum.photos/seed/${seed}/200`}
                 alt="album image"
@@ -75,14 +77,15 @@ export interface LibraryArtistProps {
     name: string;
     img: string;
     added: string;
+    onGoToArtist: (id: number) => void;
 }
 
-export const LibraryArtist: React.FC<LibraryArtistProps> = ({ name, img }) => {
+export const LibraryArtist: React.FC<LibraryArtistProps> = ({ name, img, onGoToArtist }) => {
     const [seed] = useState(generateSeed());
     const [loaded,setLoaded] = useState(false);
 
     return (
-        <div className="library-item">
+        <div className="library-item" onClick={() => onGoToArtist(0)}>
             <img
                 src={`https://picsum.photos/seed/${seed}/200`}
                 alt="artist image"
