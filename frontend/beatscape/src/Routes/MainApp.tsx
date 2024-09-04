@@ -1,5 +1,5 @@
 import './MainApp.css';
-import React, { useState, useEffect, useRef} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { BsThreeDots, BsPip } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOpenInFull, MdOutlineCloseFullscreen } from "react-icons/md";
@@ -11,6 +11,7 @@ import Profile from '../Components/Profile';
 import Settings from '../Components/Settings';
 import SearchResult from '../Components/SearchResult';
 import { Library } from '../Components/Library';
+import ShortcutListener from '../Components/ShorcutListener';
 import NowPlaying from '../Components/NowPlaying';
 import menuDataJson from '../Data/dropdownData.json';
 import sampleDate from '../Data/sampleData.json';
@@ -53,13 +54,13 @@ function MainApp() {
   const [isShuffle, setIsShuffle] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  
+
   const [isAutoplay, setIsAutoplay] = useState(false);
 
   const [theme, setTheme] = useState('Classic');
 
 
-  const onLogged = () =>{
+  const onLogged = () => {
     setIsLogged(true);
   }
 
@@ -67,25 +68,57 @@ function MainApp() {
     setIsAutoplay(!isAutoplay);
   }
 
-  const onThemeSwitch =(theme : string) => {
-      themes.map((t) => {
-          if(t.name === theme){
-            const root = document.documentElement;
-            t.vars.map((v) => {
-                root.style.setProperty(v.name, v.value);
-            });
-            setTheme(theme);
-          }
-      });
+  const onThemeSwitch = (theme: string) => {
+    themes.map((t) => {
+      if (t.name === theme) {
+        const root = document.documentElement;
+        t.vars.map((v) => {
+          root.style.setProperty(v.name, v.value);
+        });
+        setTheme(theme);
+      }
+    });
   }
 
-  const handleAction = (action : string) => {
-    console.log(action);
+  const handleAction = (action: string) => {
     setIsDropdownMenuOpen(false);
+    switch (action) {
+      case 'Play/Pause':
+        if (isPlaying) {
+          setIsPlaying(false);
+        }
+        else {
+          setIsPlaying(true);
+        }
+        break;
+      case 'Next':
+        console.log('next');
+        break;
+      case 'Previous':
+        console.log('previous');
+        break;
+      case 'Repeat':
+        setRepeat(Repeat === 2 ? 0 : Repeat + 1);
+        break;
+      case 'Shuffle':
+        setIsShuffle(!isShuffle);
+        break;
+      case 'VolumeUp':
+        setVolume(volume < 100 ? volume + 10 : 100);
+        break;
+      case 'VolumeDown':
+        setVolume(volume > 0 ? volume - 10 : 0);
+        break;
+      case 'Mute':
+        setVolume(volume === 0 ? lastVolume : 0);
+        break;
+      default:
+        break;
+    }
   }
 
   useEffect(() => {
-    const handleClickOutside = (event : any ) => {
+    const handleClickOutside = (event: any) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownMenuOpen(false);
       }
@@ -102,17 +135,17 @@ function MainApp() {
       setCenterPanel(false);
     }
     else {
-      if(centerPanelContent!==0){
+      if (centerPanelContent !== 0) {
         setCenterPanel(true);
       }
     }
   }
 
   const toggleFullScreen = () => {
-    if(isFullScreen){
+    if (isFullScreen) {
       document.exitFullscreen();
     }
-    else{
+    else {
       document.documentElement.requestFullscreen();
     }
     setIsFullScreen(!isFullScreen);
@@ -128,7 +161,7 @@ function MainApp() {
     setCenterPanel(true);
   }
 
-  const onPlay = (id : number, type : string) => {
+  const onPlay = (id: number, type: string) => {
     console.log('play', id, type);
     setIsPlaying(true);
   }
@@ -146,7 +179,7 @@ function MainApp() {
     console.log('next');
   }
 
-  const onRepeat = (repeat : number) => {
+  const onRepeat = (repeat: number) => {
     setRepeat(repeat);
   }
 
@@ -154,12 +187,12 @@ function MainApp() {
     setIsShuffle(!isShuffle);
   }
 
-  const onSeek = (percent : number) => {
+  const onSeek = (percent: number) => {
     const newTime = Math.floor(duration * percent / 100);
     setCurrentTime(newTime);
   }
 
-  const onSearch = (value : string) => {
+  const onSearch = (value: string) => {
     console.log('search', value);
     setSearchInput(value);
     setCenterPanelContent(3);
@@ -171,19 +204,19 @@ function MainApp() {
     setIsLogged(false);
   }
 
-  const onGoToArtist = (id : number) => {
+  const onGoToArtist = (id: number) => {
     console.log('go to artist', id);
   }
 
-  const onGoToAlbum = (id : number) => {
+  const onGoToAlbum = (id: number) => {
     console.log('go to album', id);
   }
 
-  const onGoToPlaylist = (id : number) => {
+  const onGoToPlaylist = (id: number) => {
     console.log('go to playlist', id);
   }
 
-  const onGoToUser = (id : number) => {
+  const onGoToUser = (id: number) => {
     console.log('go to user', id);
   }
 
@@ -191,9 +224,9 @@ function MainApp() {
     console.log('profile save');
   }
 
-  const onVolumeChange = (volume : number) => {
+  const onVolumeChange = (volume: number) => {
     setVolume(volume);
-    if(volume !== 0){
+    if (volume !== 0) {
       setLastVolume(volume);
     }
   }
@@ -202,111 +235,112 @@ function MainApp() {
 
   return (
     <div>
-      {isFullScreen ? 
-      <div className='fullscreen-app'>
-        <img src={`logo512${theme.toLowerCase()}.png`} className="center-logo-fs" alt="logo" loading='lazy' />
-        <div className="nowplaying-fs">
-          <h3>Lune Argentée</h3>
-          <p>Fl3ur1nestimable</p>
-        </div>
-        <div className="bottom-fs">
-          <VolumeController
-                onVolumeChange={(volume: number) => onVolumeChange(volume)}
-                volume={volume}
-                onMute={() => onVolumeChange(volume === 0 ? lastVolume : 0)}
-          />
-          <MusicController
-            onPlay={onPlay}
-            onPause={onPause}
-            onPrevious={onPrevious}
-            onNext={onNext}
-            onRepeat={onRepeat}
-            onShuffle={onShuffle}
-            onSeek={onSeek}
-            currentTime={currentTime}
-            duration={duration}
-            isPlaying={isPlaying}
-            isShuffle={isShuffle}
-            repeat={Repeat}
-          />
-          <div className='bottom-bar-right'>
-            <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOutlineCloseFullscreen /></button>
+      {isFullScreen ?
+        <div className='fullscreen-app'>
+          <img src={`logo512${theme.toLowerCase()}.png`} className="center-logo-fs" alt="logo" loading='lazy' />
+          <div className="nowplaying-fs">
+            <h3>Lune Argentée</h3>
+            <p>Fl3ur1nestimable</p>
           </div>
-        </div>
-      </div> :
-      isLogged ? 
-      <div className='app'>
-          <div className='app-main-container'>
-            <section className='top-bar'>
-              <div className='top-bar-left'>
-                <div className='dropdown-container' ref={dropdownRef}>
-                  <button className='dots' onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}><BsThreeDots /></button>
-                  {isDropdownMenuOpen && <DropdownMenu menuData={menuData} onAction={handleAction} />}
-                </div>
-                
-                <button className='toogle-center-panel' onClick={()=> toggleCenterPanel()}>
-                  <img src={theme === 'Light' ? "logo192black.png" : "logo192nobg.png"}
-                      alt="logo" 
-                      loading='lazy' />
-                </button>
-              </div>
-              <SearchBar onSearch={(value : string) => onSearch(value)} />
-              <div className='top-bar-right'>
-                {//TOCOMPLETE
-                }
-                <button className='profile-button' onClick={() => showProfile()}>
-                  <img src="logo fraise.png" alt="logo" loading='lazy' />
-                </button>
-                <button className='settings-button' onClick={() => showSettings()}><IoSettingsOutline /></button>
-              </div>
-            </section>
-            <div className='app-panels'>
-              <section className='left-panel'>
-                <Library playlists={playlists} albums={albums} artists={artists} />
-              </section>
-              <section className={centerPanel ? 'center-panel show' : 'center-panel hide'}>
-                {centerPanelContent === 1 && <Profile user={user} onSave={handleProfileSave}/>}
-                {centerPanelContent === 2 && <Settings onThemeSwitch={onThemeSwitch} onAutoplaySwitch={onAutoplaySwitch} isAutoplay={isAutoplay} onLogout={onLogout}/>}
-                {centerPanelContent === 3 && <SearchResult result={searchResult} onPlay={onPlay} onGoToArtist={onGoToArtist} onGoToAlbum={onGoToAlbum} onGoToPlaylist={onGoToPlaylist} onGoToUser={onGoToUser}/>}
-              </section>
-              <section className='right-panel'>
-                <NowPlaying/>
-              </section>
+          <div className="bottom-fs">
+            <VolumeController
+              onVolumeChange={(volume: number) => onVolumeChange(volume)}
+              volume={volume}
+              onMute={() => onVolumeChange(volume === 0 ? lastVolume : 0)}
+            />
+            <MusicController
+              onPlay={onPlay}
+              onPause={onPause}
+              onPrevious={onPrevious}
+              onNext={onNext}
+              onRepeat={onRepeat}
+              onShuffle={onShuffle}
+              onSeek={onSeek}
+              currentTime={currentTime}
+              duration={duration}
+              isPlaying={isPlaying}
+              isShuffle={isShuffle}
+              repeat={Repeat}
+            />
+            <div className='bottom-bar-right'>
+              <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOutlineCloseFullscreen /></button>
             </div>
-            <section className='bottom-bar'>
-              <VolumeController
-                onVolumeChange={(volume: number) => onVolumeChange(volume)}
-                volume={volume}
-                onMute={() => onVolumeChange(volume === 0 ? lastVolume : 0)}
-              />
-              <MusicController
-                onPlay={onPlay}
-                onPause={onPause}
-                onPrevious={onPrevious}
-                onNext={onNext}
-                onRepeat={onRepeat}
-                onShuffle={onShuffle}
-                onSeek={onSeek}
-                currentTime={currentTime}
-                duration={duration}
-                isPlaying={isPlaying}
-                isShuffle={isShuffle}
-                repeat={Repeat}
-              />
-              <div className='bottom-bar-right'>
-                <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOpenInFull /></button>
-              </div>
-            </section>
-            <img 
-            src={`logo512${theme.toLowerCase()}.png`} 
-            className="app-center-logo" 
-            alt="logo" 
-            loading='lazy' />
           </div>
-        </div>
-        : <div><Login onLogged={onLogged}/></div> 
+        </div> :
+        isLogged ?
+          <div className='app'>
+            <ShortcutListener shortcutActions={shortcuts} onAction={handleAction} />
+            <div className='app-main-container'>
+              <section className='top-bar'>
+                <div className='top-bar-left'>
+                  <div className='dropdown-container' ref={dropdownRef}>
+                    <button className='dots' onClick={() => setIsDropdownMenuOpen(!isDropdownMenuOpen)}><BsThreeDots /></button>
+                    {isDropdownMenuOpen && <DropdownMenu menuData={menuData} onAction={handleAction} />}
+                  </div>
+
+                  <button className='toogle-center-panel' onClick={() => toggleCenterPanel()}>
+                    <img src={theme === 'Light' ? "logo192black.png" : "logo192nobg.png"}
+                      alt="logo"
+                      loading='lazy' />
+                  </button>
+                </div>
+                <SearchBar onSearch={(value: string) => onSearch(value)} />
+                <div className='top-bar-right'>
+                  {//TOCOMPLETE
+                  }
+                  <button className='profile-button' onClick={() => showProfile()}>
+                    <img src="logo fraise.png" alt="logo" loading='lazy' />
+                  </button>
+                  <button className='settings-button' onClick={() => showSettings()}><IoSettingsOutline /></button>
+                </div>
+              </section>
+              <div className='app-panels'>
+                <section className='left-panel'>
+                  <Library playlists={playlists} albums={albums} artists={artists} />
+                </section>
+                <section className={centerPanel ? 'center-panel show' : 'center-panel hide'}>
+                  {centerPanelContent === 1 && <Profile user={user} onSave={handleProfileSave} />}
+                  {centerPanelContent === 2 && <Settings onThemeSwitch={onThemeSwitch} onAutoplaySwitch={onAutoplaySwitch} isAutoplay={isAutoplay} onLogout={onLogout} />}
+                  {centerPanelContent === 3 && <SearchResult result={searchResult} onPlay={onPlay} onGoToArtist={onGoToArtist} onGoToAlbum={onGoToAlbum} onGoToPlaylist={onGoToPlaylist} onGoToUser={onGoToUser} />}
+                </section>
+                <section className='right-panel'>
+                  <NowPlaying />
+                </section>
+              </div>
+              <section className='bottom-bar'>
+                <VolumeController
+                  onVolumeChange={(volume: number) => onVolumeChange(volume)}
+                  volume={volume}
+                  onMute={() => onVolumeChange(volume === 0 ? lastVolume : 0)}
+                />
+                <MusicController
+                  onPlay={onPlay}
+                  onPause={onPause}
+                  onPrevious={onPrevious}
+                  onNext={onNext}
+                  onRepeat={onRepeat}
+                  onShuffle={onShuffle}
+                  onSeek={onSeek}
+                  currentTime={currentTime}
+                  duration={duration}
+                  isPlaying={isPlaying}
+                  isShuffle={isShuffle}
+                  repeat={Repeat}
+                />
+                <div className='bottom-bar-right'>
+                  <button className='fullscreen' onClick={() => toggleFullScreen()}><MdOpenInFull /></button>
+                </div>
+              </section>
+              <img
+                src={`logo512${theme.toLowerCase()}.png`}
+                className="app-center-logo"
+                alt="logo"
+                loading='lazy' />
+            </div>
+          </div>
+          : <div><Login onLogged={onLogged} /></div>
       }
-      </div>
+    </div>
   );
 }
 

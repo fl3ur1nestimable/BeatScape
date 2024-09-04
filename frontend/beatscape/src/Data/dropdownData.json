@@ -4,10 +4,6 @@
         "label": "File",
         "items": [
           {
-            "label": "Log Out",
-            "shortcut": "Ctrl+W"
-          },
-          {
             "label": "About"
           },
           {
@@ -17,67 +13,60 @@
         ]
       },
       {
-        "label": "Edit",
-        "items": [
-          {
-            "label": "Search",
-            "shortcut": "Ctrl+F"
-          },
-          {
-            "label": "Settings",
-            "shortcut": "Ctrl+P"
-          }
-        ]
-      },
-      {
         "label": "Playback",
         "items": [
           {
-            "label": "Play",
-            "shortcut": "Space"
-          },
-          {
-            "label": "Pause",
-            "shortcut": "Space"
+            "label": "Play/Pause",
+            "shortcut": "Space",
+            "action": "Play/Pause"
           },
           {
             "label": "Next",
-            "shortcut": "Ctrl+Right Arrow"
+            "shortcut": "Shift+ArrowRight",
+            "action": "next"
           },
           {
             "label": "Previous",
-            "shortcut": "Ctrl+Left Arrow"
+            "shortcut": "Shift+ArrowLeft",
+            "action": "Previous"
           },
           {
             "label": "Repeat",
-            "shortcut": "Ctrl+R"
+            "shortcut": "Shift+R",
+            "action": "Repeat"
           },
           {
             "label": "Shuffle",
-            "shortcut": "Ctrl+S"
+            "shortcut": "Shift+S",
+            "action": "Shuffle"
           },
           {
             "label": "Volume Up",
-            "shortcut": "Ctrl+Up Arrow"
+            "shortcut": "Shift+ArrowUp",
+            "action": "VolumeUp"
           },
           {
             "label": "Volume Down",
-            "shortcut": "Ctrl+Down Arrow"
+            "shortcut": "Shift+ArrowDown",
+            "action": "VolumeDown"
+          },
+          {
+            "label": "Mute",
+            "shortcut": "Shift+M",
+            "action": "Mute"
           }
         ]
       }
     ],
     "shortcutActions": {
-      "Ctrl+W": "LogOut",
-      "Ctrl+F": "Search",
-      "Ctrl+P": "Settings",
-      "Space": ["Play", "Pause"],
-      "Ctrl+Right Arrow": "next",
-      "Ctrl+Left Arrow": "Previous",
-      "Ctrl+R": "Pepeat",
-      "Ctrl+S": "Shuffle",
-      "Ctrl+Up Arrow": "Volume Up",
-      "Ctrl+Down Arrow": "Volume Down",
+      "Space": "Play/Pause",
+      "Shift+ArrowRight": "next",
+      "Shift+ArrowLeft": "Previous",
+      "Shift+R": "Repeat",
+      "Shift+S": "Shuffle",
+      "Shift+ArrowUp": "VolumeUp",
+      "Shift+ArrowDown": "VolumeDown",
+      "Shift+M": "Mute",
       "F1": "Documentation"
     }
   }

@@ -8,10 +8,16 @@ interface DropdownMenuProps {
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ menuData, onAction }) => {
+  const callAction = (menu : any) => {
+    if (!menu.items){
+      onAction(menu.action);
+    }
+  }
+  
   const renderMenu = (menu : any) => {
     return (
       <div key={menu.label} className="dropdown-menu-item">
-        <button onClick={() => onAction(menu.label)}>
+        <button onClick={() => callAction(menu)}>
           {menu.label}
             {menu.items && menu.items.length > 0 && (
                 <IoIosArrowForward className="dropdown-menu-arrow" />

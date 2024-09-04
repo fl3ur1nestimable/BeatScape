@@ -3,26 +3,26 @@ import { useState, useEffect } from "react";
 import "./Login.css";
 
 interface LoginProps {
-    onLogged: () => void; 
-  }
+    onLogged: () => void;
+}
 
-const Login: React.FC<LoginProps> = ({onLogged}) => {
+const Login: React.FC<LoginProps> = ({ onLogged }) => {
 
     useEffect(() => {
-        const handleKeyDown = (e : any) =>{
+        const handleKeyDown = (e: any) => {
             console.log(e.keycode)
-            if(e.keycode === 13){
-                if(isLogin){
+            if (e.keycode === 13) {
+                if (isLogin) {
                     handleLogin();
                 }
                 handleSignup();
             }
         };
-        document.addEventListener("keydown",handleKeyDown);
-        return() =>{
-            document.removeEventListener("keydown",handleKeyDown)
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown)
         }
-    },[]);
+    }, []);
 
     const [isLogin, setIsLogin] = useState(false);
     const [name, setName] = useState('');
@@ -32,29 +32,29 @@ const Login: React.FC<LoginProps> = ({onLogged}) => {
     const [error, setError] = useState('');
     const [loaded, setLoaded] = useState(false);
 
-    const passwordIsStrong = (pwd : string) => {
+    const passwordIsStrong = (pwd: string) => {
         return pwd.length >= 8 && /[A-Z]/.test(pwd) && /[a-z]/.test(pwd) && /[0-9]/.test(pwd) && /[!@#$%^&*-_]/.test(pwd);
     }
 
-    const validateEmail = (email : string) => {
+    const validateEmail = (email: string) => {
         const re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
 
     const handleSignup = () => {
-        if(!name || !email || !password || !confirmPwd){
+        if (!name || !email || !password || !confirmPwd) {
             setError('All fields are required');
             return;
         }
-        if(!validateEmail(email)){
+        if (!validateEmail(email)) {
             setError('Invalid email address');
             return;
         }
-        if(!passwordIsStrong(password)){
+        if (!passwordIsStrong(password)) {
             setError('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character');
             return;
         }
-        if(password !== confirmPwd){
+        if (password !== confirmPwd) {
             setError('Passwords do not match');
             return;
         }
@@ -63,11 +63,11 @@ const Login: React.FC<LoginProps> = ({onLogged}) => {
     }
 
     const handleLogin = () => {
-        if(!email || !password){
+        if (!email || !password) {
             setError('All fields are required');
             return;
         }
-        if(!validateEmail(email)){
+        if (!validateEmail(email)) {
             setError('Invalid email address');
             return;
         }
@@ -95,25 +95,25 @@ const Login: React.FC<LoginProps> = ({onLogged}) => {
     return (
         <div className="login">
             <div className={isLogin ? "login-image right" : "login-image left"}>
-            <img src="logo512classic.png" alt="logo" loading="lazy" onLoad={() => setLoaded(true)}/>
-            <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
-                <path id="curve" d="
+                <img src="logo512classic.png" alt="logo" loading="lazy" onLoad={() => setLoaded(true)} />
+                <svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+                    <path id="curve" d="
                     M 400, 0
                     a 400,400 0 1,1 0,800
                     a 400,400 0 1,1 0,-800
                 " stroke="none" fill="none" />
-                <text className={isLogin ? "login-text onright" : "login-text onleft"} 
-                    dominantBaseline="hanging" 
-                    textAnchor="middle">
-                    <textPath xlinkHref="#curve" startOffset={isLogin ? "75%" : "25%"} >
-                        {isLogin ? "LOGIN" : "SIGN UP"}
-                    </textPath>
-                </text>
-            </svg>
-        </div>
+                    <text className={isLogin ? "login-text onright" : "login-text onleft"}
+                        dominantBaseline="hanging"
+                        textAnchor="middle">
+                        <textPath xlinkHref="#curve" startOffset={isLogin ? "75%" : "25%"} >
+                            {isLogin ? "LOGIN" : "SIGN UP"}
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
 
             <div className="login-form">
-                {isLogin ? 
+                {isLogin ?
                     <div className="login-login">
                         <label>Email</label>
                         <input type="text" onChange={(e) => setEmail(e.target.value)} />
