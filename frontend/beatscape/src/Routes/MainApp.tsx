@@ -251,16 +251,19 @@ function MainApp() {
   const onGoToArtist = (id: number) => {
     console.log("go to artist", id);
     setCenterPanelContent(6);
+    setCenterPanel(true);
   };
 
   const onGoToAlbum = (id: number) => {
     console.log("go to album", id);
     setCenterPanelContent(5);
+    setCenterPanel(true);
   };
 
   const onGoToPlaylist = (id: number) => {
     console.log("go to playlist", id);
     setCenterPanelContent(4);
+    setCenterPanel(true);
   };
 
   const onGoToUser = (id: number) => {
