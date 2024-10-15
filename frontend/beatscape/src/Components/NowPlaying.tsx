@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaHeart, FaPlus } from "react-icons/fa6";
 import { IoMusicalNotes } from "react-icons/io5";
-import "./NowPlaying.css";
+import "../Styles/NowPlaying.css";
 
 const NowPlaying = () => {
 

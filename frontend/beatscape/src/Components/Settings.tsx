@@ -1,7 +1,7 @@
 import React from "react";
 import ToggleSwitch from "./ToggleSwitch";
 import Themes from "../Data/Themes.json";
-import "./Settings.css";
+import "../Styles/Settings.css";
 
 interface SettingsProps {
     onThemeSwitch: (theme: string) => void;

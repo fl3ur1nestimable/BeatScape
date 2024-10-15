@@ -1,5 +1,5 @@
 import React from "react";
-import "./ToggleSwitch.css";
+import "../Styles/ToggleSwitch.css";
 
 interface ToggleSwitchProps {
     isOn: boolean;

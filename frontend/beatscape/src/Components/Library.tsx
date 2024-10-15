@@ -1,6 +1,6 @@
 import React from "react";
 import { LibraryAlbum, LibraryArtist, LibraryPlaylist, LibraryAlbumProps, LibraryArtistProps, LibraryPlaylistProps } from "./LibraryItem";
-import "./Library.css";
+import "../Styles/Library.css";
 
 type LibraryItem = LibraryPlaylistProps | LibraryAlbumProps | LibraryArtistProps;
 

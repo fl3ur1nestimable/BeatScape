@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { IoMusicalNotes } from "react-icons/io5";
-import "./LibraryItem.css";
+import "../Styles/LibraryItem.css";
 
 const generateSeed = () => {
     return Math.floor(Math.random() * 100000);

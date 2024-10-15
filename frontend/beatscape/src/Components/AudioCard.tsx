@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "./Card";
-import "./AudioCard.css";
+import "../Styles/AudioCard.css";
 
 interface TrackCardProps {
     id: number;

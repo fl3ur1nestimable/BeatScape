@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
 import { FaRegCirclePlay} from "react-icons/fa6";
-import "./Page.css";
+import "../Styles/Page.css";
 
 type playlistTitle = {
     id : number;

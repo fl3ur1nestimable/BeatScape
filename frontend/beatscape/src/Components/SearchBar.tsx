@@ -1,6 +1,6 @@
 import React from "react";
 import { IoSearch, IoClose } from "react-icons/io5";
-import "./SearchBar.css";
+import "../Styles/SearchBar.css";
 
 interface SearchBarProps {
     onSearch: (query: string) => void;

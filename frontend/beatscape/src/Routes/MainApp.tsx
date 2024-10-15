@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { MdOpenInFull, MdOutlineCloseFullscreen } from "react-icons/md";
+//components import
 import SearchBar from "../Components/SearchBar";
 import MusicController from "../Components/MusicController";
 import VolumeController from "../Components/VolumeController";
@@ -15,6 +16,7 @@ import { LibraryAlbumProps, LibraryArtistProps, LibraryPlaylistProps } from "../
 import ShortcutListener from "../Components/ShorcutListener";
 import NowPlaying from "../Components/NowPlaying";
 import {PlaylistPage, AlbumPage, ArtistPage} from "../Components/Page";
+//data import
 import menuDataJson from "../Data/dropdownData.json";
 import sampleDate from "../Data/sampleData.json";
 import sampleResult from "../Data/sampleResult.json";
@@ -27,7 +29,6 @@ import Login from "./Login";
 
 function MainApp() {
   const dropdownRef = useRef<HTMLDivElement>(null);
-
   const menuData = menuDataJson.menuData;
   const shortcuts = menuDataJson.shortcutActions;
   const user = sampleDate.user;

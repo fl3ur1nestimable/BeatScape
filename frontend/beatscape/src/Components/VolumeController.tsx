@@ -5,7 +5,7 @@ import {
     IoVolumeMedium,
     IoVolumeMute,
 } from "react-icons/io5";
-import "./VolumeController.css";
+import "../Styles/VolumeController.css";
 
 interface VolumeControllerProps {
     onVolumeChange: (volume: number) => void;

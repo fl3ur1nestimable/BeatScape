@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
-import "./Profile.css";
+import "../Styles/Profile.css";
 
 interface ProfileProps {
     user: {

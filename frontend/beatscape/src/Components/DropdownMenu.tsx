@@ -1,5 +1,5 @@
 import React from "react";
-import "./DropdownMenu.css";
+import "../Styles/DropdownMenu.css";
 import { IoIosArrowForward } from "react-icons/io";
 
 interface DropdownMenuProps {

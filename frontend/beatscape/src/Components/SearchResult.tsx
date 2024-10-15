@@ -1,6 +1,6 @@
 import React from "react";
 import { TrackCard, ArtistCard, PlaylistCard, AlbumCard} from "./AudioCard";
-import "./SearchResult.css";
+import "../Styles/SearchResult.css";
 
 interface SearchResultProps {
     result: any;

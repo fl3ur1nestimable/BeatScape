@@ -4,7 +4,7 @@ import { FaRegCirclePlay, FaRegCirclePause } from "react-icons/fa6";
 import { GiNextButton, GiPreviousButton } from "react-icons/gi";
 import { LuRepeat,LuRepeat1 } from "react-icons/lu";
 import { IoShuffle } from "react-icons/io5";
-import "./MusicController.css";
+import "../Styles/MusicController.css";
 
 interface MusicControllerProps {
     onPlay: (id : number, type : string) => void;

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FaRegCirclePlay} from "react-icons/fa6";
 import { IoMusicalNotes } from "react-icons/io5";
-import "./Card.css";
+import "../Styles/Card.css";
 
 interface CardProps {
     img: string;
